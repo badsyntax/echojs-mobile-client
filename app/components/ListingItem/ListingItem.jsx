@@ -4,6 +4,7 @@ import './_ListingItem.scss';
 
 import React from 'react';
 import classnames from 'classnames';
+import moment from 'moment';
 
 var { PropTypes } = React;
 
@@ -14,10 +15,6 @@ class ListingItem extends React.Component {
     this.state = {
       isSelected: false
     };
-  }
-
-  handleClick(e) {
-    this.toggleSelected();
   }
 
   toggleSelected() {
@@ -38,10 +35,19 @@ class ListingItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.item);
+    var item = this.props.item;
+    var timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
     return (
-      <article className={this.getClassName()} onClick={this.handleClick.bind(this)}>
-        {this.props.item.title}
+      <article className={this.getClassName()}>
+        <h2>
+          <a rel="nofollow" href={item.url}>
+            {item.title}
+          </a>
+        </h2>
+        <p>
+          {item.up} up and {item.down} down,
+          posted by {item.username} {timeFromNow} with {item.comments} comments
+        </p>
       </article>
     );
   }

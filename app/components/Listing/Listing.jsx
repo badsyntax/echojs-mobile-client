@@ -17,6 +17,8 @@ import {
 
 var { PropTypes } = React;
 
+console.log(LISTINGS_REQUEST_GET_ERROR);
+
 class Listing extends React.Component {
 
   constructor(...args) {
@@ -37,6 +39,7 @@ class Listing extends React.Component {
           this.hideActivityIndicator()
           break;
         case LISTINGS_REQUEST_GET_ERROR:
+          console.log('ERROR');
           this.showErrorMessage()
           break;
         default:

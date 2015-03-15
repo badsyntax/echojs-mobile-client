@@ -1,4 +1,11 @@
 .info-message {
+  .mui-paper-container {
+    padding: 10px;
+    margin: 10px 0;
+  }
+  &.-hidden {
+    display: none;
+  }
   &.-error {
     color: red;
   }

@@ -10,10 +10,15 @@ var { PropTypes } = React;
 class InfoMessage extends React.Component {
 
   getClassName() {
-    return classnames('-' + this.props.type, {
-      'info-message': true,
-      '-hidden': this.isHidden()
-    });
+    return classnames(
+      '-' + this.props.type,
+      'mui-paper',
+      'mui-z-depth-1',
+      'mui-rounded',
+      'info-message', {
+        '-hidden': this.isHidden()
+      }
+    );
   }
 
   isHidden() {
@@ -21,10 +26,11 @@ class InfoMessage extends React.Component {
   }
 
   render() {
-
     return (
       <div className={this.getClassName()}>
-        {this.props.message}
+        <div className="mui-paper-container mui-z-depth-bottom">
+          {this.props.message}
+        </div>
       </div>
     );
   }
