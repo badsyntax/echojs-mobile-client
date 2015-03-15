@@ -92,6 +92,7 @@ class Listing extends React.Component {
   render() {
     return (
       <section className={'listing'}>
+        <h2 className="listing__title">Top News</h2>
         {this.getActivityIndicator()}
         {this.getInfoMessage()}
         {this.props.listings.map(this.getListingItem, this)}

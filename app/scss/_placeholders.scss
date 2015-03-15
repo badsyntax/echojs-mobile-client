@@ -1,0 +1,9 @@
+/* _placeholders.scss */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

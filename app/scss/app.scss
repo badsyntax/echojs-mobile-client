@@ -1,9 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,300,500");
 
-@import "./variables/colors";
-@import "./variables/media-queries";
-@import "./variables/spacing";
-@import "./variables/custom-variables";
+@import "variables";
+@import "helpers";
 @import "material-ui-sass/material-ui";
 @import "material-ui-sass/material-ui/html";
 

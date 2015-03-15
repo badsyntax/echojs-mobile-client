@@ -1,5 +1,12 @@
 @import "toolkit";
 
 .header {
+  @extend %clearfix;
   font-size: inherit;
+}
+
+.header__title {
+  .mui-app-bar & {
+    margin: 0;
+  }
 }

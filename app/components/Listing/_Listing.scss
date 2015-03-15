@@ -1,5 +1,11 @@
 @import "toolkit";
 
-.header {
+.listing {
   font-size: inherit;
+}
+
+.listing__title {
+  font-size: 18px;
+  padding-left: 22px;
+  margin-bottom: 0;
 }
