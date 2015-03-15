@@ -1,14 +1,5 @@
 @import "toolkit";
 
 .listing-item {
-  list-style: none;
-  display: block;
-  cursor: pointer;
   padding: 10px;
-  &:hover {
-    background: yellow;
-  }
-  &.-selected {
-    background: lightblue;
-  }
 }

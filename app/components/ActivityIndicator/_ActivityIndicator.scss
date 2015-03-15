@@ -1,15 +1,14 @@
-/* Loading indicator */
 .activity-indicator {
   position: relative;
-  width: 72px; /* diameter */
-  height: 72px; /* diameter */
+  width: 72px;
+  height: 72px;
 
   &.-hidden {
     display: none;
   }
 }
 
-.outer, .inner, .activity-indicator:after {
+.inner, .activity-indicator:after {
   position: absolute;
   left: 0;
   top: 0;
@@ -17,58 +16,38 @@
   bottom: 0;
 }
 
-/* Mask */
 .activity-indicator:after {
   content: " ";
-  margin: 10%; /* stroke width */
+  margin: 10%;
   border-radius: 100%;
-  background: #888; /* container background */
-}
-
-/* Spinning gradients */
-.outer, .inner {
-  animation-duration: 3s; /* speed */
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.outer {
-  animation-name: rotate-outer;
+  background: #fff;
 }
 
 .inner {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   animation-name: rotate-inner;
 }
 
 /* Halfs */
-.outer:before, .inner:before, .outer:after, .inner:after {
+.inner:before, .inner:after {
   position: absolute;
   top: 0;
   bottom: 0;
   content: " ";
 }
 
-/* Left half */
-.outer:before, .inner:before {
+.inner:before {
   left: 0;
   right: 50%;
-  border-radius: 72px 0 0 72px; /* diameter */
+  border-radius: 72px 0 0 72px;
 }
 
-/* Right half */
-.outer:after, .inner:after {
+.inner:after {
   left: 50%;
   right: 0;
-  border-radius: 0 72px 72px 0; /* diameter */
-}
-
-/* Half gradients */
-.outer:before {
-  background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.5));
-}
-
-.outer:after {
-  background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 0.5));
+  border-radius: 0 72px 72px 0;
 }
 
 .inner:before {
@@ -78,18 +57,6 @@
 .inner:after {
   background-image: linear-gradient(to bottom, hsla(0, 0%, 50%, 0.5), hsla(0, 0%, 75%, 0.5));
 }
-
-/* Spinning animations */
-@keyframes rotate-outer {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(1080deg);
-  }
-}
-
 
 @keyframes rotate-inner {
   0% {

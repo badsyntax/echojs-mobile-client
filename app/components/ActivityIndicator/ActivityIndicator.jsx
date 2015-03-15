@@ -25,7 +25,6 @@ class ActivityIndicator extends React.Component {
 
     return (
       <div className={this.getClassName()}>
-        <div className={'outer'}></div>
         <div className={'inner'}></div>
       </div>
     );
