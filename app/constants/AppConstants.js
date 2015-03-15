@@ -9,4 +9,4 @@ export const LISTINGS_REQUEST_GET_START = 'LISTINGS_REQUEST_GET_START';
 export const LISTINGS_REQUEST_GET_SUCCESS = 'LISTINGS_REQUEST_GET_SUCCESS';
 export const LISTINGS_REQUEST_GET_ERROR = 'LISTINGS_REQUEST_GET_ERROR';
 export const LISTINGS_REQUEST_GET_COMPLETE = 'LISTINGS_REQUEST_GET_COMPLETE';
-export const LISTING_REQUEST_ERROR_MESSAGE = 'Sorry, there was an error loading the news.';
+export const LISTING_REQUEST_ERROR_MESSAGE = 'Sorry, there was an error loading the news. Please try again.';

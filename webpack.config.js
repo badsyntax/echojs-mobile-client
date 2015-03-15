@@ -47,7 +47,7 @@ var loaders = [
     loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
   },
   {
-    test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
+    test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff2$|\.ttf$/,
     loader: 'file-loader?name=[path][name].[ext]'
   },
   {
