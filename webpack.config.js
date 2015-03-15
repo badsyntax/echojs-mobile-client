@@ -6,6 +6,8 @@ var autoprefixer = require('autoprefixer-core');
 var pkg = require('./package.json');
 
 var DEBUG = process.env.NODE_ENV !== 'production';
+var WEB_BUILD = process.env.WEB_BUILD === 'true';
+var CORDOVA_BUILD = !WEB_BUILD;
 
 var cssBundle = path.join('css', util.format('[name].%s.css', pkg.version));
 var jsBundle = path.join('js', util.format('[name].%s.js', pkg.version));
@@ -57,7 +59,8 @@ var loaders = [
       'template-html-loader?' + [
         'raw=true',
         'engine=lodash',
-        'version='+pkg.version
+        'version='+pkg.version,
+        'cordova='+CORDOVA_BUILD
       ].join('&')
     ].join('!')
   },

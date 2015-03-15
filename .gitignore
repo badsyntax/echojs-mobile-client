@@ -1,4 +1,6 @@
 node_modules
-/build
+/build/www
+/build/platforms
+/build/plugins
 *.log*
 .DS_Store
