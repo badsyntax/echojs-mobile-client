@@ -5,7 +5,7 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 
 import {
   LISTINGS_UPDATED,
-  LISTINGS_REQUEST_GET_SUCCESS
+  ACTION_LISTINGS_REQUEST_GET_SUCCESS
 } from '../constants/AppConstants';
 
 class ListingStore extends BaseStore {
@@ -20,5 +20,14 @@ class ListingStore extends BaseStore {
 }
 
 var store = new ListingStore();
+
+AppDispatcher.register((action) => {
+  switch(action.actionType) {
+    case ACTION_LISTINGS_REQUEST_GET_SUCCESS:
+      store.setAll(action.listings);
+      break;
+    default:
+  }
+});
 
 export default store;

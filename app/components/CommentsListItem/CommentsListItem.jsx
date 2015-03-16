@@ -11,28 +11,8 @@ var { PropTypes } = React;
 
 class CommentsListItem extends React.Component {
 
-  constructor(...args) {
-    super(...args);
-    this.state = {
-      isSelected: false
-    };
-  }
-
-  toggleSelected() {
-    this.setState({
-      isSelected: !this.state.isSelected
-    });
-  }
-
-  isSelected() {
-    return this.state.isSelected;
-  }
-
   getClassName() {
-    return classnames({
-      'comments-list-item': true,
-      '-selected': this.isSelected()
-    });
+    return classnames('comments-list-item');
   }
 
   render() {

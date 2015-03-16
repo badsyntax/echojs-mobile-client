@@ -10,8 +10,9 @@ import ListingItem from '../ListingItem/ListingItem';
 
 import {
   ACTION_LISTINGS_GET,
-  LISTINGS_REQUEST_GET_COMPLETE,
-  LISTINGS_REQUEST_GET_ERROR,
+  ACTION_LISTINGS_REQUEST_GET_START,
+  ACTION_LISTINGS_REQUEST_GET_COMPLETE,
+  ACTION_LISTINGS_REQUEST_GET_ERROR,
   LISTINGS_REQUEST_ERROR_MESSAGE
 } from '../../constants/AppConstants';
 
@@ -30,13 +31,13 @@ class Listing extends React.Component {
   componentWillMount() {
     AppDispatcher.register((action) => {
       switch(action.actionType) {
-        case ACTION_LISTINGS_GET:
+        case ACTION_LISTINGS_REQUEST_GET_START:
           this.showActivityIndicator()
           break;
-        case LISTINGS_REQUEST_GET_COMPLETE:
+        case ACTION_LISTINGS_REQUEST_GET_COMPLETE:
           this.hideActivityIndicator()
           break;
-        case LISTINGS_REQUEST_GET_ERROR:
+        case ACTION_LISTINGS_REQUEST_GET_ERROR:
           this.showErrorMessage()
           break;
         default:
@@ -89,7 +90,6 @@ class Listing extends React.Component {
   render() {
     return (
       <section className={'listing'}>
-        <h2 className="listing__title">Top News</h2>
         {this.getActivityIndicator()}
         {this.getInfoMessage()}
         {this.props.listings.map(this.getListingItem, this)}

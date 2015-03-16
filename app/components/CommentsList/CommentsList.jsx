@@ -8,6 +8,7 @@ import router from '../../router';
 import ActivityIndicator from '../ActivityIndicator/ActivityIndicator';
 import InfoMessage from '../InfoMessage/InfoMessage';
 import CommentsListItem from '../CommentsListItem/CommentsListItem';
+import ListingItem from '../ListingItem/ListingItem';
 
 import {
   ACTION_COMMENTS_GET,
@@ -99,6 +100,8 @@ class CommentsList extends React.Component {
   render() {
     return (
       <section className={'comments-list'}>
+        <ListingItem
+          item={this.props.newsItem} />
         {this.getActivityIndicator()}
         {this.getInfoMessage()}
         {this.props.comments.map(this.getCommentsListItem, this)}
@@ -108,6 +111,7 @@ class CommentsList extends React.Component {
 }
 
 CommentsList.propTypes =  {
+  newsItem: PropTypes.object.isRequired,
   comments: PropTypes.array.isRequired
 };
 

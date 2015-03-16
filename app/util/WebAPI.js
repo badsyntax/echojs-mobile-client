@@ -2,7 +2,7 @@
 
 import _ from 'lodash';
 import request from 'superagent';
-import AppDispatcher from '../dispatcher/AppDispatcher';
+import AppActions from '../actions/AppActions';
 
 import {
   LISTINGS_REQUEST_GET_COMPLETE,
@@ -19,11 +19,15 @@ var exampleNews = require('../data/example-news.json');
 
 class API {
 
-  getListings(opts) {
+  getNews(opts) {
+
+    AppActions.getListingsStart();
 
     if (process.env.NODE_ENV !== 'production') {
-      console.info('Serving mocked data');
-      return setTimeout(this.onGetListings.bind(this, null, { body: exampleNews }), 600);
+      console.info('Serving mocked data for WebAPI.getNews()');
+      return setTimeout(this._onGetListings.bind(this, null, {
+        body: exampleNews
+      }), 600);
     }
 
     opts = _.merge({
@@ -37,47 +41,36 @@ class API {
     request
     .get(url)
     .set('Accept', 'application/json')
-    .end(this.onGetListings);
+    .end(this._onGetListings);
   }
 
   getComments(newsId) {
+
+    AppActions.getCommentsStart();
+
     var url = [endpoint, 'comments', newsId].join('/');
 
     request
     .get(url)
     .set('Accept', 'application/json')
-    .end(this.onGetComments);
+    .end(this._onGetComments);
   }
 
-  onGetListings(err, res) {
-    AppDispatcher.dispatch({
-      actionType: LISTINGS_REQUEST_GET_COMPLETE
-    });
+  _onGetListings(err, res) {
+    AppActions.getListingsComplete();
     if (err) {
-      AppDispatcher.dispatch({
-        actionType: LISTINGS_REQUEST_GET_ERROR
-      });
+      AppActions.getListingsError();
     } else {
-      AppDispatcher.dispatch({
-        actionType: LISTINGS_REQUEST_GET_SUCCESS,
-        listings: res.body.news
-      });
+      AppActions.getListingsSuccess(res.body.news);
     }
   }
 
-  onGetComments(err, res) {
-    AppDispatcher.dispatch({
-      actionType: COMMENTS_REQUEST_GET_COMPLETE
-    });
+  _onGetComments(err, res) {
+    AppActions.getCommentsComplete();
     if (err) {
-      AppDispatcher.dispatch({
-        actionType: COMMENTS_REQUEST_GET_ERROR
-      });
+      AppActions.getCommentsError();
     } else {
-      AppDispatcher.dispatch({
-        actionType: COMMENTS_REQUEST_GET_SUCCESS,
-        comments: res.body
-      });
+      AppActions.getCommentsSuccess(res.body);
     }
   }
 }
