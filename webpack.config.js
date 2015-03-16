@@ -45,6 +45,11 @@ var loaders = [
     loader: 'babel-loader?optional&optional=runtime'
   },
   {
+    test: /\.json$/,
+    exclude: /node_modules/,
+    loader: 'json-loader'
+  },
+  {
     test: /\.jpe?g$|\.gif$|\.svg$|\.png$|\.woff2$|\.ttf$/,
     loader: 'file-loader?name=[path][name].[ext]'
   },

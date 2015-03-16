@@ -15,9 +15,16 @@ import {
 
 var endpoint = 'http://localhost:9000';
 
+var exampleNews = require('../data/example-news.json');
+
 class API {
 
   getListings(opts) {
+
+    if (process.env.NODE_ENV !== 'production') {
+      setTimeout(this.onGetListings.bind(this, null, { body: exampleNews }));
+      return;
+    }
 
     opts = _.merge({
       sort: 'latest',
