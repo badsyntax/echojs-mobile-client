@@ -9,10 +9,10 @@ import InfoMessage from '../InfoMessage/InfoMessage';
 import ListingItem from '../ListingItem/ListingItem';
 
 import {
-  LISTINGS_REQUEST_GET,
+  ACTION_LISTINGS_GET,
   LISTINGS_REQUEST_GET_COMPLETE,
   LISTINGS_REQUEST_GET_ERROR,
-  LISTING_REQUEST_ERROR_MESSAGE
+  LISTINGS_REQUEST_ERROR_MESSAGE
 } from '../../constants/AppConstants';
 
 var { PropTypes } = React;
@@ -30,7 +30,7 @@ class Listing extends React.Component {
   componentWillMount() {
     AppDispatcher.register((action) => {
       switch(action.actionType) {
-        case LISTINGS_REQUEST_GET:
+        case ACTION_LISTINGS_GET:
           this.showActivityIndicator()
           break;
         case LISTINGS_REQUEST_GET_COMPLETE:
@@ -81,7 +81,7 @@ class Listing extends React.Component {
     return (
       <InfoMessage
         type={'error'}
-        message={LISTING_REQUEST_ERROR_MESSAGE}
+        message={LISTINGS_REQUEST_ERROR_MESSAGE}
         hidden={!this.state.showErrorMessage} />
     );
   }

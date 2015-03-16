@@ -5,6 +5,7 @@ import './_ListingItem.scss';
 import React from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
+import AppActions from '../../actions/AppActions';
 
 var { PropTypes } = React;
 
@@ -46,7 +47,8 @@ class ListingItem extends React.Component {
         </h2>
         <p>
           {item.up} up and {item.down} down,
-          posted by {item.username} {timeFromNow} with {item.comments} comments
+          posted by {item.username} {timeFromNow}
+          with <a href={'/#/comments/'+this.props.item.id}>{item.comments} comments</a>
         </p>
       </article>
     );

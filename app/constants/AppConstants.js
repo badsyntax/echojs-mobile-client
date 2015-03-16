@@ -1,11 +1,16 @@
 'use strict';
 
-export const ITEMS_UPDATED = 'ITEMS_UPDATED';
-export const ITEM_SELECTED = 'ITEM_SELECTED';
-export const ITEM_DESELECTED = 'ITEM_DESELECTED';
 export const LISTINGS_UPDATED = 'LISTINGS_UPDATED';
-export const LISTINGS_REQUEST_GET = 'LISTINGS_REQUEST_GET';
 export const LISTINGS_REQUEST_GET_SUCCESS = 'LISTINGS_REQUEST_GET_SUCCESS';
 export const LISTINGS_REQUEST_GET_ERROR = 'LISTINGS_REQUEST_GET_ERROR';
 export const LISTINGS_REQUEST_GET_COMPLETE = 'LISTINGS_REQUEST_GET_COMPLETE';
-export const LISTING_REQUEST_ERROR_MESSAGE = 'Sorry, there was an error loading the news. Please try again.';
+export const LISTINGS_REQUEST_ERROR_MESSAGE = 'Sorry, there was an error loading the news. Please try again.';
+
+export const COMMENTS_UPDATED = 'COMMENTS_UPDATED';
+export const COMMENTS_REQUEST_GET_SUCCESS = 'COMMENTS_REQUEST_GET_SUCCESS';
+export const COMMENTS_REQUEST_GET_ERROR = 'COMMENTS_REQUEST_GET_ERROR';
+export const COMMENTS_REQUEST_GET_COMPLETE = 'COMMENTS_REQUEST_GET_COMPLETE';
+export const COMMENTS_REQUEST_ERROR_MESSAGE = 'Sorry, there was an error loading the comments. Please try again.';
+
+export const ACTION_LISTINGS_GET = 'ACTION_LISTINGS_GET';
+export const ACTION_COMMENTS_SHOW = 'ACTION_COMMENTS_SHOW';

@@ -3,19 +3,21 @@
 import './_App.scss';
 
 import React from 'react';
-import AppDispatcher from '../../dispatcher/AppDispatcher';
 import Header from '../Header/Header';
 import Listing from '../Listing/Listing';
 import Footer from '../Footer/Footer';
+import AppActions from '../../actions/AppActions';
+import AppDispatcher from '../../dispatcher/AppDispatcher';
+
+import { ACTION_COMMENTS_SHOW } from '../../constants/AppConstants';
 
 import ListingStore from '../../stores/ListingStore';
-import EchoJSAPI from '../../services/EchoJSAPI';
-
-import { LISTINGS_REQUEST_GET } from '../../constants/AppConstants';
+import CommentsStore from '../../stores/CommentsStore';
 
 function getAppState() {
   return {
-    listings: ListingStore.getAll()
+    listings: ListingStore.getAll(),
+    comments: CommentsStore.getAll()
   };
 }
 
@@ -28,7 +30,12 @@ export default class App extends React.Component {
 
   componentDidMount() {
     ListingStore.addChangeListener(this.onChange.bind(this));
-    EchoJSAPI.getListings();
+    CommentsStore.addChangeListener(this.onChange.bind(this));
+  }
+
+  componentWillUnmount() {
+    ListingStore.removeChangeListener(this.onChange);
+    CommentsStore.removeChangeListener(this.onChange);
   }
 
   onChange() {
@@ -39,7 +46,9 @@ export default class App extends React.Component {
     return (
       <div className={'app'}>
         <Header />
-        <Listing listings={this.state.listings} />
+        <div className={'body'}>
+          <Listing listings={this.state.listings} />
+        </div>
         <Footer />
       </div>
     );

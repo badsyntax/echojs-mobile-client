@@ -4,21 +4,21 @@ import BaseStore from './BaseStore';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 
 import {
-  LISTINGS_UPDATED,
-  LISTINGS_REQUEST_GET_SUCCESS
+  COMMENTS_UPDATED,
+  COMMENTS_REQUEST_GET_SUCCESS
 } from '../constants/AppConstants';
 
-class ListingStore extends BaseStore {
+class CommentsStore extends BaseStore {
 
   emitChange() {
-    this.emit(LISTINGS_UPDATED);
+    this.emit(COMMENTS_UPDATED);
   }
 
   addChangeListener(callback) {
-    this.on(LISTINGS_UPDATED, callback);
+    this.on(COMMENTS_UPDATED, callback);
   }
 }
 
-var store = new ListingStore();
+var store = new CommentsStore();
 
 export default store;

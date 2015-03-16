@@ -5,10 +5,12 @@ import request from 'superagent';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 
 import {
-  LISTINGS_REQUEST_GET,
   LISTINGS_REQUEST_GET_COMPLETE,
   LISTINGS_REQUEST_GET_SUCCESS,
-  LISTINGS_REQUEST_GET_ERROR
+  LISTINGS_REQUEST_GET_ERROR,
+  COMMENTS_REQUEST_GET_COMPLETE,
+  COMMENTS_REQUEST_GET_SUCCESS,
+  COMMENTS_REQUEST_GET_ERROR
 } from '../constants/AppConstants';
 
 var endpoint = 'http://localhost:9000';
@@ -31,6 +33,15 @@ class API {
     .end(this.onGetListings);
   }
 
+  getComments(newsId) {
+    var url = [endpoint, 'comments', newsId].join('/');
+
+    request
+    .get(url)
+    .set('Accept', 'application/json')
+    .end(this.onGetComments);
+  }
+
   onGetListings(err, res) {
     AppDispatcher.dispatch({
       actionType: LISTINGS_REQUEST_GET_COMPLETE
@@ -46,17 +57,24 @@ class API {
       });
     }
   }
+
+  onGetComments(err, res) {
+    AppDispatcher.dispatch({
+      actionType: COMMENTS_REQUEST_GET_COMPLETE
+    });
+    if (err) {
+      AppDispatcher.dispatch({
+        actionType: COMMENTS_REQUEST_GET_ERROR
+      });
+    } else {
+      AppDispatcher.dispatch({
+        actionType: COMMENTS_REQUEST_GET_SUCCESS,
+        listings: res.body.news
+      });
+    }
+  }
 }
 
 var api = new API();
-
-AppDispatcher.register((action) => {
-  switch(action.actionType) {
-    case LISTINGS_REQUEST_GET:
-      api.getListings();
-      break;
-    default:
-  }
-});
 
 export default api;

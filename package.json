@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "classnames": "^1.1.4",
+    "director": "^1.2.8",
     "flux": "^2.0.1",
     "lodash": "^3.5.0",
     "material-ui-sass": "^0.7.1",
