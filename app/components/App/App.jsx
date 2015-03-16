@@ -5,6 +5,7 @@ import './_App.scss';
 import React from 'react';
 import Header from '../Header/Header';
 import Listing from '../Listing/Listing';
+import CommentsList from '../CommentsList/CommentsList';
 import Footer from '../Footer/Footer';
 import AppActions from '../../actions/AppActions';
 import AppDispatcher from '../../dispatcher/AppDispatcher';
@@ -48,6 +49,7 @@ export default class App extends React.Component {
         <Header />
         <div className={'body'}>
           <Listing listings={this.state.listings} />
+          <CommentsList comments={this.state.comments} />
         </div>
         <Footer />
       </div>

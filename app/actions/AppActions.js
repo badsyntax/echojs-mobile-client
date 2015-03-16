@@ -23,9 +23,12 @@ AppDispatcher.register((action) => {
       CommentsStore.setAll(action.comments);
       break;
     case ACTION_LISTINGS_GET:
+      ListingStore.setAll([]);
       EchoJSAPI.getListings();
       break;
     case ACTION_COMMENTS_GET:
+      ListingStore.setAll([]);
+      CommentsStore.setAll([]);
       EchoJSAPI.getComments(action.newsId);
       break;
     default:
@@ -41,7 +44,6 @@ export default {
   },
 
   getComments(newsId) {
-    alert(newsId);
     AppDispatcher.dispatch({
       actionType: ACTION_COMMENTS_GET,
       newsId: newsId

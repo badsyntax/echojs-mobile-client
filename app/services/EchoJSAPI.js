@@ -22,8 +22,8 @@ class API {
   getListings(opts) {
 
     if (process.env.NODE_ENV !== 'production') {
-      setTimeout(this.onGetListings.bind(this, null, { body: exampleNews }));
-      return;
+      console.info('Serving mocked data');
+      return setTimeout(this.onGetListings.bind(this, null, { body: exampleNews }), 600);
     }
 
     opts = _.merge({
@@ -76,7 +76,7 @@ class API {
     } else {
       AppDispatcher.dispatch({
         actionType: COMMENTS_REQUEST_GET_SUCCESS,
-        listings: res.body.news
+        comments: res.body
       });
     }
   }
