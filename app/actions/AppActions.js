@@ -10,20 +10,6 @@ import {
 
 export default {
 
-  selectItem(item) {
-    AppDispatcher.dispatch({
-      actionType: ITEM_SELECTED,
-      item: item
-    });
-  },
-
-  deSelectItem(item) {
-    AppDispatcher.dispatch({
-      actionType: ITEM_DESELECTED,
-      item: item
-    });
-  }
-
   getListings() {
     AppDispatcher.dispatch({
       actionType: LISTINGS_REQUEST_GET

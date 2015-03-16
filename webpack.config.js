@@ -45,11 +45,7 @@ var loaders = [
     loader: 'babel-loader?optional&optional=runtime'
   },
   {
-    test: /\.css$/,
-    loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
-  },
-  {
-    test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff2$|\.ttf$/,
+    test: /\.jpe?g$|\.gif$|\.svg$|\.png$|\.woff2$|\.ttf$/,
     loader: 'file-loader?name=[path][name].[ext]'
   },
   {
@@ -65,7 +61,7 @@ var loaders = [
     ].join('!')
   },
   {
-    test: /\.scss$/,
+    test: /\.s?css$/,
     loader: cssExtractTextPlugin.extract('style-loader', [
       'css-loader?sourceMap',
       'postcss-loader',

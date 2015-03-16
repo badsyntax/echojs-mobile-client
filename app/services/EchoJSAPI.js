@@ -5,7 +5,7 @@ import request from 'superagent';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 
 import {
-  LISTINGS_REQUEST_GET_START,
+  LISTINGS_REQUEST_GET,
   LISTINGS_REQUEST_GET_COMPLETE,
   LISTINGS_REQUEST_GET_SUCCESS,
   LISTINGS_REQUEST_GET_ERROR
@@ -13,7 +13,7 @@ import {
 
 var endpoint = 'http://localhost:9000';
 
-export default {
+class API {
 
   getListings(opts) {
 
@@ -25,15 +25,11 @@ export default {
 
     var url = [endpoint, 'list'].concat(_.values(opts)).join('/');
 
-    AppDispatcher.dispatch({
-      actionType: LISTINGS_REQUEST_GET_START
-    });
-
     request
     .get(url)
     .set('Accept', 'application/json')
     .end(this.onGetListings);
-  },
+  }
 
   onGetListings(err, res) {
     AppDispatcher.dispatch({
@@ -51,3 +47,16 @@ export default {
     }
   }
 }
+
+var api = new API();
+
+AppDispatcher.register((action) => {
+  switch(action.actionType) {
+    case LISTINGS_REQUEST_GET:
+      api.getListings();
+      break;
+    default:
+  }
+});
+
+export default api;

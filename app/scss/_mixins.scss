@@ -1,8 +1,4 @@
-/* _functions.scss */
-
-@mixin my-padding-mixin($some-number) {
-  padding: $some-number;
-}
+/* _mixins.scss */
 
 @mixin font-face($font-family, $file-path, $font-weight, $font-style) {
   @font-face {

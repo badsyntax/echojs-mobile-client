@@ -9,7 +9,7 @@ import InfoMessage from '../InfoMessage/InfoMessage';
 import ListingItem from '../ListingItem/ListingItem';
 
 import {
-  LISTINGS_REQUEST_GET_START,
+  LISTINGS_REQUEST_GET,
   LISTINGS_REQUEST_GET_COMPLETE,
   LISTINGS_REQUEST_GET_ERROR,
   LISTING_REQUEST_ERROR_MESSAGE
@@ -30,7 +30,7 @@ class Listing extends React.Component {
   componentWillMount() {
     AppDispatcher.register((action) => {
       switch(action.actionType) {
-        case LISTINGS_REQUEST_GET_START:
+        case LISTINGS_REQUEST_GET:
           this.showActivityIndicator()
           break;
         case LISTINGS_REQUEST_GET_COMPLETE:

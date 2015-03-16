@@ -3,6 +3,10 @@
 import './_Header.scss';
 
 import React from 'react';
+import Icon from '../Icon/Icon';
+import AppActions from '../../actions/AppActions';
+
+import { LISTINGS_REQUEST_GET } from '../../constants/AppConstants';
 
 class Header extends React.Component {
 
@@ -16,12 +20,27 @@ class Header extends React.Component {
     );
   }
 
+  getRefreshButton() {
+    return (
+      <a href="#" onClick={this.handleRefreshClick} className={'mui-icon-button mui-enhanced-button mui-is-link-button -refresh'}>
+        <Icon type={'refresh'} />
+      </a>
+    );
+  }
+
+  handleRefreshClick() {
+    AppActions.getListings();
+  }
+
   render() {
     return (
       <div className="header mui-app-bar mui-paper mui-z-depth-0">
         <div className="mui-paper-container mui-z-depth-bottom">
           {this.getNavButton()}
-          <h1 className="header__title mui-app-bar-title">Echo JS</h1>
+          <h1 className="header__title mui-app-bar-title">
+            <a href="#">Echo JS</a>
+          </h1>
+          {this.getRefreshButton()}
         </div>
       </div>
     );
