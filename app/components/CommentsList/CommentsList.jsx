@@ -17,7 +17,7 @@ import {
   COMMENTS_GET_ERROR_MESSAGE
 } from '../../constants/AppConstants';
 
-var { PropTypes } = React;
+let { PropTypes } = React;
 
 class CommentsList extends React.Component {
 

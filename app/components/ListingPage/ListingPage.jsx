@@ -8,7 +8,7 @@ import ListingStore from '../../stores/ListingStore';
 
 import Router from 'react-router';
 
-var { Route, Redirect, RouteHandler, Link } = Router;
+let { Route, Redirect, RouteHandler, Link } = Router;
 
 import {
   ACTION_LISTINGS_GET,

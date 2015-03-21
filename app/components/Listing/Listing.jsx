@@ -12,7 +12,7 @@ import {
   LISTINGS_REQUEST_ERROR_MESSAGE
 } from '../../constants/AppConstants';
 
-var { PropTypes } = React;
+let { PropTypes } = React;
 
 class Listing extends React.Component {
 

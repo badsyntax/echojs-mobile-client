@@ -5,7 +5,7 @@ import './_ActivityIndicator.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-var { PropTypes } = React;
+let { PropTypes } = React;
 
 class ActivityIndicator extends React.Component {
 

@@ -17,8 +17,8 @@ class ListingItem extends React.Component {
   }
 
   render() {
-    var item = this.props.item;
-    var timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
+    let item = this.props.item;
+    let timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
     return (
       <article className={this.getClassName()}>
         <h2>

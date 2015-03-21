@@ -24,7 +24,7 @@ class ListingStore extends BaseStore {
   }
 }
 
-var store = new ListingStore();
+let store = new ListingStore();
 
 AppDispatcher.register((action) => {
   switch(action.actionType) {

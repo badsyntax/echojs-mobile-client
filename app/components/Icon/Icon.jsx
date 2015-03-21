@@ -5,11 +5,11 @@ import './_Icon.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-var icons = {
+let icons = {
   refresh: require('!!raw!../../assets/icons/navigation/svg/ic_refresh_24px.svg')
 };
 
-var { PropTypes } = React;
+let { PropTypes } = React;
 
 class Icon extends React.Component {
 
@@ -21,7 +21,7 @@ class Icon extends React.Component {
   }
 
   render() {
-    var html = {
+    let html = {
       __html: icons[this.props.type]
     };
     return (

@@ -8,7 +8,7 @@ import CommentsStore from '../../stores/CommentsStore';
 
 import Router from 'react-router';
 
-var { Route, Redirect, RouteHandler, Link } = Router;
+let { Route, Redirect, RouteHandler, Link } = Router;
 
 import {
   ACTION_COMMENTS_GET,

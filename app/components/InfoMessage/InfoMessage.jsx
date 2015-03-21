@@ -5,7 +5,7 @@ import './_InfoMessage.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-var { PropTypes } = React;
+let { PropTypes } = React;
 
 class InfoMessage extends React.Component {
 

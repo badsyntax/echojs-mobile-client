@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import moment from 'moment';
 import AppActions from '../../actions/AppActions';
 
-var { PropTypes } = React;
+let { PropTypes } = React;
 
 class CommentsListItem extends React.Component {
 
@@ -16,8 +16,8 @@ class CommentsListItem extends React.Component {
   }
 
   render() {
-    var item = this.props.item;
-    var timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
+    let item = this.props.item;
+    let timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
     return (
       <article className={this.getClassName()}>
         {this.props.item.body}
