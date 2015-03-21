@@ -3,37 +3,17 @@
 import './_ListingItem.scss';
 
 import React from 'react';
+import Router from 'react-router';
 import classnames from 'classnames';
 import moment from 'moment';
 
-import { COMMENTS_CLICK } from '../../constants/AppConstants';
-
-var { PropTypes } = React;
+let { PropTypes } = React;
+let { Link } = Router;
 
 class ListingItem extends React.Component {
 
-  constructor(...args) {
-    super(...args);
-    this.state = {
-      isSelected: false
-    };
-  }
-
-  toggleSelected() {
-    this.setState({
-      isSelected: !this.state.isSelected
-    });
-  }
-
-  isSelected() {
-    return this.state.isSelected;
-  }
-
   getClassName() {
-    return classnames({
-      'listing-item': true,
-      '-selected': this.isSelected()
-    });
+    return classnames('listing-item');
   }
 
   render() {
@@ -47,9 +27,12 @@ class ListingItem extends React.Component {
           </a>
         </h2>
         <p>
-          {item.up} up and {item.down} down,
-          posted by {item.username} {timeFromNow}
-          with <a href={'/#/comments/'+this.props.item.id}>{item.comments} comments</a>
+          <span>{item.up} up and {item.down} down,</span>
+          <span>posted by {item.username} {timeFromNow}</span>
+          <span>with </span>
+          <Link to="comments" params={{newsId: this.props.item.id}}>
+            {item.comments} comments
+          </Link>
         </p>
       </article>
     );
