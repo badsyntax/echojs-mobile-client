@@ -6,8 +6,8 @@ var autoprefixer = require('autoprefixer-core');
 var pkg = require('./package.json');
 
 var DEBUG = process.env.NODE_ENV !== 'production';
-var WEB_BUILD = process.env.WEB_BUILD === 'true';
-var CORDOVA_BUILD = !WEB_BUILD;
+var WEB_BUILD = process.env.BUILD_TYPE === 'web';
+var CORDOVA_BUILD = process.env.BUILD_TYPE === 'cordova';
 
 var cssBundle = path.join('css', util.format('[name].%s.css', pkg.version));
 var jsBundle = path.join('js', util.format('[name].%s.js', pkg.version));
@@ -25,7 +25,8 @@ if (DEBUG) {
   plugins.push(
     new webpack.HotModuleReplacementPlugin()
   );
-} else {
+}
+else {
   plugins.push(
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin(),
@@ -42,7 +43,7 @@ var loaders = [
   {
     test: /\.jsx?$/,
     exclude: /node_modules/,
-    loader: 'babel-loader?optional&optional=runtime'
+    loader: 'babel-loader?optional=runtime'
   },
   {
     test: /\.json$/,

@@ -10,19 +10,13 @@ var { PropTypes } = React;
 class ActivityIndicator extends React.Component {
 
   getClassName() {
-    return classnames({
-      'activity-indicator': true,
-      'loading': true,
-      '-hidden': this.isHidden()
-    });
-  }
-
-  isHidden() {
-    return this.props.hidden;
+    return classnames(
+      'activity-indicator',
+      'loading'
+    );
   }
 
   render() {
-
     return (
       <div className={this.getClassName()}>
         <div className={'inner'}></div>
@@ -30,10 +24,6 @@ class ActivityIndicator extends React.Component {
     );
   }
 }
-
-ActivityIndicator.propTypes =  {
-  hidden: PropTypes.bool.isRequired
-};
 
 export default ActivityIndicator;
 

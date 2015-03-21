@@ -5,12 +5,9 @@ import './scss/app.scss';
 import 'babel-core/polyfill';
 
 import React from 'react';
-import App from './components/App/App';
-import API from './util/WebAPI';
+import Router from 'react-router';
+import routes from './routes';
 
-React.render(
-  <App />,
-  document.getElementById('app')
-);
-
-API.getNews();
+Router.run(routes, function (Handler) {
+  React.render(<Handler/>, document.getElementById('app'));
+});

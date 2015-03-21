@@ -15,14 +15,8 @@ class InfoMessage extends React.Component {
       'mui-paper',
       'mui-z-depth-1',
       'mui-rounded',
-      'info-message', {
-        '-hidden': this.isHidden()
-      }
+      'info-message'
     );
-  }
-
-  isHidden() {
-    return this.props.hidden;
   }
 
   render() {
@@ -37,7 +31,6 @@ class InfoMessage extends React.Component {
 }
 
 InfoMessage.propTypes =  {
-  hidden: PropTypes.bool.isRequired,
   type: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired
 };

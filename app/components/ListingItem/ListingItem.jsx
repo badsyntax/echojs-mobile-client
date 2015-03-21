@@ -5,8 +5,6 @@ import './_ListingItem.scss';
 import React from 'react';
 import classnames from 'classnames';
 import moment from 'moment';
-import AppActions from '../../actions/AppActions';
-import AppDispatcher from '../../dispatcher/AppDispatcher';
 
 import { COMMENTS_CLICK } from '../../constants/AppConstants';
 
@@ -38,10 +36,6 @@ class ListingItem extends React.Component {
     });
   }
 
-  handleCommentsClick() {
-    AppActions.getComments(this.props.item.id);
-  }
-
   render() {
     var item = this.props.item;
     var timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
@@ -55,7 +49,7 @@ class ListingItem extends React.Component {
         <p>
           {item.up} up and {item.down} down,
           posted by {item.username} {timeFromNow}
-          with <a onClick={this.handleCommentsClick.bind(this)} href={'/#/comments/'+this.props.item.id}>{item.comments} comments</a>
+          with <a href={'/#/comments/'+this.props.item.id}>{item.comments} comments</a>
         </p>
       </article>
     );

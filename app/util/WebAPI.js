@@ -13,68 +13,54 @@ import {
   COMMENTS_REQUEST_GET_ERROR
 } from '../constants/AppConstants';
 
-var endpoint = 'http://localhost:9000';
+let endpoint = 'http://localhost:9000';
 
-var exampleNews = require('../data/example-news.json');
+let exampleNews = require('../data/example-news.json');
 
 class API {
 
   getNews(opts) {
 
-    AppActions.getListingsStart();
+    return new Promise((resolve, reject) => {
 
-    if (process.env.NODE_ENV !== 'production') {
-      console.info('Serving mocked data for WebAPI.getNews()');
-      return setTimeout(this._onGetListings.bind(this, null, {
-        body: exampleNews
-      }), 600);
-    }
+      if (process.env.NODE_ENV !== 'production') {
+        console.info('Serving mocked data for WebAPI.getNews()');
+        return setTimeout(resolve.bind(null, exampleNews.news), 600);
+      }
 
-    opts = _.merge({
-      sort: 'latest',
-      start: 0,
-      count: 30
-    }, opts);
+      opts = _.merge({
+        sort: 'latest',
+        start: 0,
+        count: 30
+      }, opts);
 
-    var url = [endpoint, 'list'].concat(_.values(opts)).join('/');
+      let url = [endpoint, 'list'].concat(_.values(opts)).join('/');
 
-    request
-    .get(url)
-    .set('Accept', 'application/json')
-    .end(this._onGetListings);
+      request
+      .get(url)
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        if (err) { return reject(err); }
+        resolve(res.body.news);
+      });
+    });
   }
 
   getComments(newsId) {
 
-    AppActions.getCommentsStart();
+    return new Promise((resolve, reject) => {
 
-    var url = [endpoint, 'comments', newsId].join('/');
+      let url = [endpoint, 'comments', newsId].join('/');
 
-    request
-    .get(url)
-    .set('Accept', 'application/json')
-    .end(this._onGetComments);
-  }
-
-  _onGetListings(err, res) {
-    AppActions.getListingsComplete();
-    if (err) {
-      AppActions.getListingsError();
-    } else {
-      AppActions.getListingsSuccess(res.body.news);
-    }
-  }
-
-  _onGetComments(err, res) {
-    AppActions.getCommentsComplete();
-    if (err) {
-      AppActions.getCommentsError();
-    } else {
-      AppActions.getCommentsSuccess(res.body);
-    }
+      request
+      .get(url)
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        if (err) { return reject(err); }
+        resolve(res.body.news);
+      });
+    });
   }
 }
 
-var api = new API();
-
-export default api;
+export default new API();

@@ -5,7 +5,8 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 
 import {
   LISTINGS_UPDATED,
-  ACTION_LISTINGS_REQUEST_GET_SUCCESS
+  ACTION_LISTINGS_GET,
+  ACTION_LISTINGS_GET_SUCCESS
 } from '../constants/AppConstants';
 
 class ListingStore extends BaseStore {
@@ -17,13 +18,20 @@ class ListingStore extends BaseStore {
   addChangeListener(callback) {
     this.on(LISTINGS_UPDATED, callback);
   }
+
+  removeChangeListener(callback) {
+    this.removeListener(LISTINGS_UPDATED, callback);
+  }
 }
 
 var store = new ListingStore();
 
 AppDispatcher.register((action) => {
   switch(action.actionType) {
-    case ACTION_LISTINGS_REQUEST_GET_SUCCESS:
+    case ACTION_LISTINGS_GET:
+      store.setAll([]);
+      break;
+    case ACTION_LISTINGS_GET_SUCCESS:
       store.setAll(action.listings);
       break;
     default:

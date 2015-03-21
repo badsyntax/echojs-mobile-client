@@ -3,9 +3,9 @@
 import './_Header.scss';
 
 import React from 'react';
+import classnames from 'classnames';
 import Icon from '../Icon/Icon';
 import AppActions from '../../actions/AppActions';
-import router from '../../router';
 
 class Header extends React.Component {
 
@@ -22,13 +22,14 @@ class Header extends React.Component {
   getRefreshButton() {
     function onClick(e) {
       e.preventDefault();
-      console.log('/'+router.getRoute().join('/'));
-      // console.log(router);
-      // console.log(router.getRoute());
-      router.dispatch('on', '/');
+      alert('refresh');
     }
+    let className = classnames(
+      'mui-icon-button mui-enhanced-button mui-is-link-button',
+      '-refresh'
+    );
     return (
-      <a href="#" onClick={onClick} className={'mui-icon-button mui-enhanced-button mui-is-link-button -refresh'}>
+      <a href="#" onClick={onClick} className={className}>
         <Icon type={'refresh'} />
       </a>
     );
