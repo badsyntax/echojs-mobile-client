@@ -5,12 +5,12 @@ import request from 'superagent';
 import AppActions from '../actions/AppActions';
 
 import {
-  LISTINGS_REQUEST_GET_COMPLETE,
-  LISTINGS_REQUEST_GET_SUCCESS,
-  LISTINGS_REQUEST_GET_ERROR,
-  COMMENTS_REQUEST_GET_COMPLETE,
-  COMMENTS_REQUEST_GET_SUCCESS,
-  COMMENTS_REQUEST_GET_ERROR
+  POSTS_REQUEST_GET_COMPLETE,
+  POSTS_REQUEST_GET_SUCCESS,
+  POSTS_REQUEST_GET_ERROR,
+  SINGLE_POST_REQUEST_GET_COMPLETE,
+  SINGLE_POST_REQUEST_GET_SUCCESS,
+  SINGLE_POST_REQUEST_GET_ERROR
 } from '../constants/AppConstants';
 
 let endpoint = 'http://localhost:9000';
@@ -23,7 +23,7 @@ class API {
 
     return new Promise((resolve, reject) => {
 
-      if (process.env.NODE_ENV !== 'production') {
+      if (false && process.env.NODE_ENV !== 'production') {
         console.info('Serving mocked data for WebAPI.getNews()');
         return setTimeout(resolve.bind(null, exampleNews.news), 600);
       }
@@ -46,18 +46,21 @@ class API {
     });
   }
 
-  getComments(newsId) {
+  getPost(postId) {
 
     return new Promise((resolve, reject) => {
 
-      let url = [endpoint, 'comments', newsId].join('/');
+      let url = [endpoint, 'comments', postId].join('/');
 
       request
       .get(url)
       .set('Accept', 'application/json')
       .end((err, res) => {
         if (err) { return reject(err); }
-        resolve(res.body.news);
+        resolve({
+          post: {},
+          comments: res.body
+        });
       });
     });
   }

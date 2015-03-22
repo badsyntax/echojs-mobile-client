@@ -1,18 +1,18 @@
 'use strict';
 
-export const ACTION_LISTINGS_GET = 'ACTION_LISTINGS_GET';
-export const ACTION_LISTINGS_GET_SUCCESS = 'ACTION_LISTINGS_GET_SUCCESS';
-export const ACTION_LISTINGS_GET_ERROR = 'ACTION_LISTINGS_GET_ERROR';
+export const ACTION_POSTS_GET = 'ACTION_POSTS_GET';
+export const ACTION_POSTS_GET_SUCCESS = 'ACTION_POSTS_GET_SUCCESS';
+export const ACTION_POSTS_GET_ERROR = 'ACTION_POSTS_GET_ERROR';
 
-export const ACTION_COMMENTS_GET = 'ACTION_COMMENTS_GET';
-export const ACTION_COMMENTS_GET_SUCCESS = 'ACTION_COMMENTS_GET_SUCCESS';
-export const ACTION_COMMENTS_GET_ERROR = 'ACTION_COMMENTS_GET_ERROR';
+export const ACTION_SINGLE_POST_GET = 'ACTION_SINGLE_POST_GET';
+export const ACTION_SINGLE_POST_GET_SUCCESS = 'ACTION_SINGLE_POST_GET_SUCCESS';
+export const ACTION_SINGLE_POST_GET_ERROR = 'ACTION_SINGLE_POST_GET_ERROR';
 
-export const LISTINGS_ERROR_MESSAGE = 'Sorry, there was an error loading the news. Please try again.';
+export const POSTS_ERROR_MESSAGE = 'Sorry, there was an error loading the news. Please try again.';
 
-export const COMMENTS_UPDATED = 'COMMENTS_UPDATED';
-export const COMMENTS_GET_SUCCESS = 'COMMENTS_GET_SUCCESS';
-export const COMMENTS_GET_ERROR = 'COMMENTS_GET_ERROR';
-export const COMMENTS_GET_COMPLETE = 'COMMENTS_GET_COMPLETE';
-export const COMMENTS_GET_ERROR_MESSAGE = 'Sorry, there was an error loading the comments. Please try again.';
-export const COMMENTS_CLICK = 'COMMENTS_CLICK';
+export const SINGLE_POST_UPDATED = 'SINGLE_POST_UPDATED';
+export const SINGLE_POST_GET_SUCCESS = 'SINGLE_POST_GET_SUCCESS';
+export const SINGLE_POST_GET_ERROR = 'SINGLE_POST_GET_ERROR';
+export const SINGLE_POST_GET_COMPLETE = 'SINGLE_POST_GET_COMPLETE';
+export const SINGLE_POST_GET_ERROR_MESSAGE = 'Sorry, there was an error loading the comments. Please try again.';
+export const SINGLE_POST_CLICK = 'SINGLE_POST_CLICK';

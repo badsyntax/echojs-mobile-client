@@ -1,6 +1,6 @@
 'use strict';
 
-import './_ListingItem.scss';
+import './_NewsListItem.scss';
 
 import React from 'react';
 import Router from 'react-router';
@@ -10,7 +10,7 @@ import moment from 'moment';
 let { PropTypes } = React;
 let { Link } = Router;
 
-class ListingItem extends React.Component {
+class NewsListItem extends React.Component {
 
   getClassName() {
     return classnames('listing-item');
@@ -30,7 +30,7 @@ class ListingItem extends React.Component {
           <span>{item.up} up and {item.down} down,</span>
           <span>posted by {item.username} {timeFromNow}</span>
           <span>with </span>
-          <Link to="comments" params={{newsId: this.props.item.id}}>
+          <Link to="post" params={{postId: this.props.item.id}}>
             {item.comments} comments
           </Link>
         </p>
@@ -39,8 +39,8 @@ class ListingItem extends React.Component {
   }
 }
 
-ListingItem.propTypes =  {
+NewsListItem.propTypes =  {
   item: PropTypes.object.isRequired
 };
 
-export default ListingItem;
+export default NewsListItem;

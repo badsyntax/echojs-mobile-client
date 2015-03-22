@@ -1,14 +1,17 @@
 import React from 'react';
 import Router from 'react-router';
 import App from './components/App/App';
-import ListingPage from './components/ListingPage/ListingPage';
-import CommentsPage from './components/CommentsPage/CommentsPage';
+import NewsPage from './components/NewsPage/NewsPage';
+import PostPage from './components/PostPage/PostPage';
 
-let { Route, Redirect, RouteHandler, Link } = Router;
+let {
+  Route,
+  DefaultRoute
+} = Router;
 
 export default (
-  <Route handler={App} path="/">
-    <Route name="listing" handler={ListingPage} path="/" />
-    <Route name="comments" path="/comments/:newsId" handler={CommentsPage} />
+  <Route handler={App}>
+    <Route name="post" path="/post/:postId" handler={PostPage} />
+    <DefaultRoute name="home" handler={NewsPage} />
   </Route>
 );

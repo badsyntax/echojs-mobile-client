@@ -4,35 +4,35 @@ import BaseStore from './BaseStore';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 
 import {
-  LISTINGS_UPDATED,
-  ACTION_LISTINGS_GET,
-  ACTION_LISTINGS_GET_SUCCESS
+  POSTS_UPDATED,
+  ACTION_POSTS_GET,
+  ACTION_POSTS_GET_SUCCESS
 } from '../constants/AppConstants';
 
-class ListingStore extends BaseStore {
+class NewsStore extends BaseStore {
 
   emitChange() {
-    this.emit(LISTINGS_UPDATED);
+    this.emit(POSTS_UPDATED);
   }
 
   addChangeListener(callback) {
-    this.on(LISTINGS_UPDATED, callback);
+    this.on(POSTS_UPDATED, callback);
   }
 
   removeChangeListener(callback) {
-    this.removeListener(LISTINGS_UPDATED, callback);
+    this.removeListener(POSTS_UPDATED, callback);
   }
 }
 
-let store = new ListingStore();
+let store = new NewsStore();
 
 AppDispatcher.register((action) => {
   switch(action.actionType) {
-    case ACTION_LISTINGS_GET:
+    case ACTION_POSTS_GET:
       store.setAll([]);
       break;
-    case ACTION_LISTINGS_GET_SUCCESS:
-      store.setAll(action.listings);
+    case ACTION_POSTS_GET_SUCCESS:
+      store.setAll(action.posts);
       break;
     default:
   }
