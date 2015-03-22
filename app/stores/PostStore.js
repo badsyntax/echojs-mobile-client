@@ -13,6 +13,10 @@ class PostStore extends EventEmitter {
 
   constructor(...args) {
     super(...args);
+    this.reset();
+  }
+
+  reset() {
     this.data = {};
   }
 

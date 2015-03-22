@@ -3,14 +3,11 @@
 import React from 'react';
 import CommentsList from '../CommentsList/CommentsList';
 import AppActions from '../../actions/AppActions';
-import AppDispatcher from '../../dispatcher/AppDispatcher';
 import PostStore from '../../stores/PostStore';
 import NewsStore from '../../stores/NewsStore';
 import NewsListItem from '../NewsListItem/NewsListItem';
-
-import Router from 'react-router';
-
-let { Route, Redirect, RouteHandler, Link } = Router;
+import ActivityIndicator from '../ActivityIndicator/ActivityIndicator';
+import InfoMessage from '../InfoMessage/InfoMessage';
 
 function getState(state) {
   return _.merge({
@@ -46,8 +43,14 @@ class PostPage extends React.Component {
     let post = this.state.post;
     return post.id ? (
       <NewsListItem
-        item={this.state.post}
-        key={'listing-item-' + post.id} />
+        item={post}
+        key={'post-item-' + post.id} />
+    ) : null;
+  }
+
+  getActivityIndicator() {
+    return this.state.isLoading ? (
+      <ActivityIndicator />
     ) : null;
   }
 
@@ -55,16 +58,30 @@ class PostPage extends React.Component {
     return (
       <CommentsList
         post={this.state.post}
-        comments={this.state.comments}
-        isLoading={this.state.isLoading}
-        hasError={this.state.hasError} />
+        comments={this.state.comments} />
     );
+  }
+
+  getInfoMessage() {
+    let type = null;
+    let message = null;
+    if (!this.state.isLoading && !this.state.comments.length) {
+      type = 'info';
+      message = '(No comments)';
+    }
+    return message ? (
+      <InfoMessage
+        type={type}
+        message={message} />
+    ) : null;
   }
 
   render() {
     return (
       <div>
         {this.getPost()}
+        {this.getActivityIndicator()}
+        {this.getInfoMessage()}
         {this.getComments()}
       </div>
     );
@@ -76,12 +93,9 @@ PostPage.contextTypes = {
 };
 
 PostPage.willTransitionTo = function(transition, params) {
-  let post = NewsStore.getAll().filter((post) => {
-    return post.id === params.postId
-  })[0];
+  PostStore.reset();
   PostStore.set({
-    post: post,
-    comments: []
+    post: NewsStore.getBy('id', params.postId)
   });
   AppActions.getPost(params.postId);
 };

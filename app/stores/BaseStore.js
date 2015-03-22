@@ -18,6 +18,12 @@ export default class BaseStore extends EventEmitter {
     return Array.from(this.data);
   }
 
+  getBy(key, val) {
+    return this.getAll().filter((post) => {
+      return post[key] === val;
+    })[0];
+  }
+
   set(item) {
     if (!this.data.has(item)) {
       this.data.add(item);

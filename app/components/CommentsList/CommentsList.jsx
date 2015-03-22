@@ -11,7 +11,7 @@ class CommentsList extends React.Component {
 
   getCommentsListItem(item) {
     return (
-      <li key={'comments-list-item-' + item.id}>
+      <li key={'comments-list-item-' + item.ctime}>
         <CommentsListItem
           item={item} />
         {this.getComments(item.replies)}
