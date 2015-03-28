@@ -33,6 +33,7 @@
     "classnames": "^1.2.0",
     "flux": "^2.0.1",
     "lodash": "^3.5.0",
+    "material-ui": "^0.7.2",
     "material-ui-sass": "^0.7.1",
     "moment": "^2.9.0",
     "react": "^0.13.1",

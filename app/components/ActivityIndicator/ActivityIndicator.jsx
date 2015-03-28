@@ -10,16 +10,13 @@ let { PropTypes } = React;
 class ActivityIndicator extends React.Component {
 
   getClassName() {
-    return classnames(
-      'activity-indicator',
-      'loading'
-    );
+    return classnames('activity-indicator');
   }
 
   render() {
     return (
       <div className={this.getClassName()}>
-        <div className={'inner'}></div>
+        Loading...
       </div>
     );
   }

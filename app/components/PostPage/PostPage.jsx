@@ -78,7 +78,7 @@ class PostPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={'mui-app-content-canvas'}>
         {this.getPost()}
         {this.getActivityIndicator()}
         {this.getInfoMessage()}

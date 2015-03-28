@@ -52,7 +52,7 @@ class NewsPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={'mui-app-content-canvas'}>
         {this.getActivityIndicator()}
         {this.getNewsList()}
       </div>
@@ -61,7 +61,7 @@ class NewsPage extends React.Component {
 }
 
 NewsPage.willTransitionTo = (transition, params) => {
-  NewsStore.setAll([]);
+  NewsStore.reset();
   AppActions.getNews();
 };
 

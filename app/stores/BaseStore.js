@@ -6,6 +6,10 @@ export default class BaseStore extends EventEmitter {
 
   constructor(...args) {
     super(...args);
+    this.reset();
+  }
+
+  reset() {
     this.setAll([]);
   }
 
