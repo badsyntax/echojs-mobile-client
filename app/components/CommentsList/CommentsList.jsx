@@ -12,8 +12,7 @@ class CommentsList extends React.Component {
   getCommentsListItem(item) {
     return (
       <li key={'comments-list-item-' + item.ctime}>
-        <CommentsListItem
-          item={item} />
+        <CommentsListItem item={item} />
         {this.getComments(item.replies)}
       </li>
     );
@@ -21,7 +20,9 @@ class CommentsList extends React.Component {
 
   getComments(comments) {
     return (
-      <ul>{comments.map(this.getCommentsListItem, this)}</ul>
+      <ul className={'comments-list-group'}>
+        {comments.map(this.getCommentsListItem, this)}
+      </ul>
     );
   }
 

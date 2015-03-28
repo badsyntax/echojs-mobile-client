@@ -1,5 +1,6 @@
 'use strict';
 
+import _ from 'lodash';
 import React from 'react';
 import CommentsList from '../CommentsList/CommentsList';
 import AppActions from '../../actions/AppActions';

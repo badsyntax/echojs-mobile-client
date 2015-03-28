@@ -1,3 +1,8 @@
 .comments-list {
-
+  ul {
+    list-style: none;
+  }
+  .comments-list-group {
+    margin: 0 24px;
+  }
 }

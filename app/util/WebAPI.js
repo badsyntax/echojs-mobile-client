@@ -16,6 +16,7 @@ import {
 let endpoint = 'http://localhost:9000';
 
 let exampleNews = require('../data/example-news.json');
+let exampleComments = require('../data/example-comments.json');
 
 class API {
 
@@ -23,7 +24,7 @@ class API {
 
     return new Promise((resolve, reject) => {
 
-      if (false && process.env.NODE_ENV !== 'production') {
+      if (process.env.NODE_ENV !== 'production') {
         console.info('Serving mocked data for WebAPI.getNews()');
         return setTimeout(resolve.bind(null, exampleNews.news), 600);
       }
@@ -49,6 +50,14 @@ class API {
   getPost(postId) {
 
     return new Promise((resolve, reject) => {
+
+      if (process.env.NODE_ENV !== 'production') {
+        console.info('Serving mocked data for WebAPI.getPost()');
+        return setTimeout(resolve.bind(null, {
+          post: {},
+          comments: exampleComments
+        }), 600);
+      }
 
       let url = [endpoint, 'comments', postId].join('/');
 

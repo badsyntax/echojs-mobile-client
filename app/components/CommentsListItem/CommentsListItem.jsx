@@ -20,14 +20,23 @@ class CommentsListItem extends React.Component {
     let timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
     return (
       <article className={this.getClassName()}>
-        {this.props.item.body}
+        <ul className="comments-list-item__metadata">
+          <li className="comments-list-item__metadata-author">
+            <a href={'http://www.echojs.com/user/' + item.username}>{item.username}</a>
+          </li>
+          <li className="comments-list-item__metadata-time">
+            {timeFromNow}
+          </li>
+        </ul>
+        <div className="comments-list-item__body">{item.body}</div>
       </article>
     );
   }
 }
 
 CommentsListItem.propTypes =  {
-  item: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired,
+  comments: PropTypes.string
 };
 
 export default CommentsListItem;
