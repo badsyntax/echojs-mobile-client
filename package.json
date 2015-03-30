@@ -1,9 +1,9 @@
 {
-  "name": "react-seed",
+  "name": "echojs-mobile-client",
   "version": "0.0.6",
-  "repository": "https://github.com/badsyntax/react-seed",
+  "repository": "https://github.com/badsyntax/echojs-mobile-client",
   "config": {
-    "build_dir": "./build/www",
+    "build_dir": "./client/www",
     "dev_port": 8000
   },
   "scripts": {
@@ -13,7 +13,7 @@
     "prewebpack": "npm run clean",
     "preemulate": "npm run build",
     "preemulate:release": "npm run build:release",
-    "clean": "rm -rf $npm_package_config_build_dir ./build/plugins ./build/platforms/android/ant-build ./build/platforms/android/assets && mkdir $npm_package_config_build_dir build/platforms/android/assets",
+    "clean": "rm -rf $npm_package_config_build_dir ./client/plugins ./client/platforms/android/ant-build ./client/platforms/android/assets && mkdir $npm_package_config_build_dir client/platforms/android/assets",
     "start": "NODE_ENV=development BUILD_TYPE=web npm run webpack && npm run start-dev-server",
     "webpack": "webpack --colors --progress --config ./webpack.config.js",
     "start-dev-server": "BUILD_TYPE=web webpack-dev-server --colors --port $npm_package_config_dev_port --content-base $npm_package_config_build_dir --config webpack.config.js --output-pathinfo --inline",

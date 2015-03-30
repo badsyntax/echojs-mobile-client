@@ -1,8 +1,8 @@
 node_modules
-/build/www
-/build/plugins
+/client/www
+/client/plugins
 *.log*
 .DS_Store
 
-build/platforms/android/assets
-build/platforms/android/ant-build
+client/platforms/android/assets
+client/platforms/android/ant-build
