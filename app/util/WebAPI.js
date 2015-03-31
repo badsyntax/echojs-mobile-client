@@ -13,7 +13,7 @@ import {
   SINGLE_POST_REQUEST_GET_ERROR
 } from '../constants/AppConstants';
 
-let endpoint = 'http://localhost:9000';
+let endpoint = 'http://echojs-api.proxima.cc';
 
 let exampleNews = require('../data/example-news.json');
 let exampleComments = require('../data/example-comments.json');
@@ -24,10 +24,10 @@ class API {
 
     return new Promise((resolve, reject) => {
 
-      if (process.env.NODE_ENV !== 'production') {
-        console.info('Serving mocked data for WebAPI.getNews()');
-        return setTimeout(resolve.bind(null, exampleNews.news), 600);
-      }
+      // if (process.env.NODE_ENV !== 'production') {
+      //   console.info('Serving mocked data for WebAPI.getNews()');
+      //   return setTimeout(resolve.bind(null, exampleNews.news), 600);
+      // }
 
       opts = _.merge({
         sort: 'latest',
@@ -51,13 +51,13 @@ class API {
 
     return new Promise((resolve, reject) => {
 
-      if (process.env.NODE_ENV !== 'production') {
-        console.info('Serving mocked data for WebAPI.getPost()');
-        return setTimeout(resolve.bind(null, {
-          post: {},
-          comments: exampleComments
-        }), 600);
-      }
+      // if (process.env.NODE_ENV !== 'production') {
+      //   console.info('Serving mocked data for WebAPI.getPost()');
+      //   return setTimeout(resolve.bind(null, {
+      //     post: {},
+      //     comments: exampleComments
+      //   }), 600);
+      // }
 
       let url = [endpoint, 'comments', postId].join('/');
 
