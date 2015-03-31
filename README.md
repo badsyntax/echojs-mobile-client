@@ -21,14 +21,12 @@ Android requires that all apps be digitally signed with a certificate before the
 2. Run `npm run build:release` to build the apk.
 3. Sign the apk: (Keystore password is: echojs)
 
-```
-cd app/client/platforms/android/ant-build
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ../keystores/EchoJS.keystore EchoJS-release-unsigned.apk EchoJS
-
-```
-
+  ```
+  cd app/client/platforms/android/ant-build
+  jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ../keystores/EchoJS.keystore EchoJS-release-unsigned.apk EchoJS
+  ```
 4. Install the apk with the `adb` tool:
 
-```
-~/Library/Android/sdk/platform-tools/adb install app/client/platforms/android/ant-build/EchoJS-release-unsigned.apk
-```
+  ```
+  ~/Library/Android/sdk/platform-tools/adb install   app/client/platforms/android/ant-build/EchoJS-release-unsigned.apk
+  ```
