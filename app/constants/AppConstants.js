@@ -16,3 +16,5 @@ export const SINGLE_POST_GET_ERROR = 'SINGLE_POST_GET_ERROR';
 export const SINGLE_POST_GET_COMPLETE = 'SINGLE_POST_GET_COMPLETE';
 export const SINGLE_POST_GET_ERROR_MESSAGE = 'Sorry, there was an error loading the comments. Please try again.';
 export const SINGLE_POST_CLICK = 'SINGLE_POST_CLICK';
+
+export const API_ENDPOINT = 'http://echojs-api.proxima.cc';
