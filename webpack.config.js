@@ -67,7 +67,7 @@ var loaders = [
     test: /\.s?css$/,
     loader: cssExtractTextPlugin.extract('style-loader', [
       'css-loader?sourceMap',
-      'postcss-loader',
+      'postcss-loader?sourceMap',
       'sass-loader?' + [
         'sourceMap',
         'outputStyle=expanded',
@@ -91,7 +91,7 @@ var config = {
   cache: DEBUG,
   debug: DEBUG,
   target: 'web',
-  devtool: DEBUG ? '#inline-source-map' : false,
+  devtool: DEBUG ? 'source-map' : false,
   entry: entry,
   output: {
     path: path.resolve(pkg.config.build_dir),

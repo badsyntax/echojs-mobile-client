@@ -1,5 +1,7 @@
 'use strict';
 
+export const APP_TITLE = 'Echo JS';
+
 export const ACTION_POSTS_GET = 'ACTION_POSTS_GET';
 export const ACTION_POSTS_GET_SUCCESS = 'ACTION_POSTS_GET_SUCCESS';
 export const ACTION_POSTS_GET_ERROR = 'ACTION_POSTS_GET_ERROR';
@@ -16,5 +18,7 @@ export const SINGLE_POST_GET_ERROR = 'SINGLE_POST_GET_ERROR';
 export const SINGLE_POST_GET_COMPLETE = 'SINGLE_POST_GET_COMPLETE';
 export const SINGLE_POST_GET_ERROR_MESSAGE = 'Sorry, there was an error loading the comments. Please try again.';
 export const SINGLE_POST_CLICK = 'SINGLE_POST_CLICK';
+
+export const ACTION_REFRESH_NEWS = 'ACTION_REFRESH_NEWS';
 
 export const API_ENDPOINT = 'http://echojs-api.proxima.cc';

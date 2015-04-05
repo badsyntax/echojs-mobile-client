@@ -6,6 +6,11 @@ import NewsList from '../NewsList/NewsList';
 import AppActions from '../../actions/AppActions';
 import NewsStore from '../../stores/NewsStore';
 import ActivityIndicator from '../ActivityIndicator/ActivityIndicator';
+import AppDispatcher from '../../dispatcher/AppDispatcher';
+
+import {
+  ACTION_REFRESH_NEWS
+} from '../../constants/AppConstants';
 
 function getState(state) {
   return _.merge({
@@ -17,9 +22,21 @@ function getState(state) {
 class NewsPage extends React.Component {
 
   constructor(...args) {
+
     super(...args);
     this.state = getState();
     this.onChange = this.onChange.bind(this);
+
+    AppDispatcher.register((action) => {
+      switch(action.actionType) {
+        case ACTION_REFRESH_NEWS:
+          this.setState({
+            isLoading: true
+          });
+          break;
+        default:
+      }
+    });
   }
 
   componentDidMount() {
@@ -62,6 +79,7 @@ class NewsPage extends React.Component {
 }
 
 NewsPage.willTransitionTo = () => {
+  console.log('transition to');
   NewsStore.reset();
   AppActions.getNews();
 };

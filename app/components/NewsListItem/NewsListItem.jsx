@@ -7,6 +7,10 @@ import Router from 'react-router';
 import classnames from 'classnames';
 import moment from 'moment';
 
+import ReactIntl from 'react-intl';
+
+let { IntlMixin, FormattedRelative } = ReactIntl;
+
 let { PropTypes } = React;
 let { Link } = Router;
 
@@ -18,7 +22,7 @@ class NewsListItem extends React.Component {
 
   render() {
     let item = this.props.item;
-    let timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
+    let time = new Date(item.ctime * 1000);
     return (
       <article className={this.getClassName()}>
         <h2>
@@ -26,14 +30,22 @@ class NewsListItem extends React.Component {
             {item.title}
           </a>
         </h2>
-        <p>
+        <footer className={'listing-item-metadata'}>
           <span>{item.up} up and {item.down} down,</span>
-          <span>posted by {item.username} {timeFromNow}</span>
-          <span>with </span>
-          <Link to="post" params={{postId: this.props.item.id}}>
-            {item.comments} comments
-          </Link>
-        </p>
+          <span>posted by</span>
+          <span>
+            <a href={'http://echojs.com/user/' + item.username} target="_blank">
+              {item.username}
+            </a>
+          </span>
+          <span><FormattedRelative value={time} /></span>
+          <span>with</span>
+          <span>
+            <Link to="post" params={{postId: this.props.item.id}}>
+              {item.comments} comments
+            </Link>
+          </span>
+        </footer>
       </article>
     );
   }

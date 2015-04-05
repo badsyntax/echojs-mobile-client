@@ -6,7 +6,8 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 import {
   POSTS_UPDATED,
   ACTION_POSTS_GET,
-  ACTION_POSTS_GET_SUCCESS
+  ACTION_POSTS_GET_SUCCESS,
+  ACTION_REFRESH_NEWS
 } from '../constants/AppConstants';
 
 class NewsStore extends BaseStore {
@@ -29,6 +30,7 @@ let store = new NewsStore();
 AppDispatcher.register((action) => {
   switch(action.actionType) {
     case ACTION_POSTS_GET:
+    case ACTION_REFRESH_NEWS:
       store.setAll([]);
       break;
     case ACTION_POSTS_GET_SUCCESS:

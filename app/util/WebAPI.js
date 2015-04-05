@@ -10,11 +10,18 @@ import {
 
 let cache = {};
 
-function cacheResponse(fetchPromise, options) {
-  if (options.id in cache && Date.now() - options.age <= cache[options.id].time) {
-    return cache[options.id].promise;
+function fetchJson(url) {
+  return fetch(url).then((response) => {
+    return response.json();
+  })
+}
+
+function cachedJsonFetch(url, options) {
+  if (url in cache && Date.now() - options.age <= cache[url].time) {
+    return cache[url].promise;
   }
-  cache[options.id] = {
+  let fetchPromise = fetchJson(url);
+  cache[url] = {
     time: Date.now(),
     promise: fetchPromise
   };
@@ -27,6 +34,10 @@ function getURL(parts) {
 
 class API {
 
+  resetCache() {
+    cache = {};
+  }
+
   getNews(opts) {
 
     let url = getURL(_.values(_.merge({
@@ -36,17 +47,11 @@ class API {
       count: 30
     }, opts)));
 
-    let request = fetch(url)
-    .then((response) => {
-      return response.json();
+    return cachedJsonFetch(url, {
+      age: 60 * 1000 // 60 seconds
     })
     .then((json) => {
       return json.news;
-    })
-
-    return cacheResponse(request, {
-      id: url,
-      age: 60 * 1000 // 60 seconds
     });
   }
 
@@ -57,21 +62,13 @@ class API {
       postId: postId
     }));
 
-    let request = fetch(url)
-    .then((response) => {
-      return response.json();
-    })
+    return fetchJson(url)
     .then((comments) => {
       return {
         post: null,
         comments: comments
       };
-    });
-
-    return cacheResponse(request, {
-      id: url,
-      age: 60 * 1000 // 60 seconds
-    });
+    })
   }
 }
 

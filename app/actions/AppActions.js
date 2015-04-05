@@ -9,7 +9,8 @@ import {
   ACTION_POSTS_GET_ERROR,
   ACTION_POSTS_GET_SUCCESS,
   ACTION_SINGLE_POST_GET_ERROR,
-  ACTION_SINGLE_POST_GET_SUCCESS
+  ACTION_SINGLE_POST_GET_SUCCESS,
+  ACTION_REFRESH_NEWS
 } from '../constants/AppConstants';
 
 export default {
@@ -42,6 +43,14 @@ export default {
       AppDispatcher.dispatch({
         actionType: ACTION_SINGLE_POST_GET_ERROR
       });
+    });
+  },
+
+  refreshNews() {
+    WebAPI.resetCache();
+    this.getNews();
+    AppDispatcher.dispatch({
+      actionType: ACTION_REFRESH_NEWS
     });
   }
 

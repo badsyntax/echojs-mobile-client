@@ -32,8 +32,8 @@
     "lodash": "^3.6.0",
     "material-ui": "^0.7.3",
     "material-ui-sass": "^0.7.2",
-    "moment": "^2.9.0",
     "react": "^0.13.1",
+    "react-intl": "^1.2.0",
     "react-router": "^0.13.2",
     "whatwg-fetch": "^0.7.0"
   },
