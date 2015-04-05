@@ -5,42 +5,59 @@ import _ from 'lodash';
 import AppActions from '../actions/AppActions';
 
 import {
-  API_ENDPOINT,
+  API_ENDPOINT
 } from '../constants/AppConstants';
 
+let cache = {};
+
+function cacheResponse(fetchPromise, options) {
+  if (options.id in cache && Date.now() - options.age <= cache[options.id].time) {
+    return cache[options.id].promise;
+  }
+  cache[options.id] = {
+    time: Date.now(),
+    promise: fetchPromise
+  };
+  return fetchPromise;
+}
+
+function getURL(parts) {
+  return [ API_ENDPOINT ].concat(parts).join('/');
+}
 
 class API {
 
-  getURL(parts) {
-    return [ API_ENDPOINT ].concat(parts).join('/');
-  }
-
   getNews(opts) {
 
-    let url = this.getURL(_.values(_.merge({
+    let url = getURL(_.values(_.merge({
       action: 'list',
       sort: 'latest',
       start: 0,
       count: 30
     }, opts)));
 
-    return fetch(url)
+    let request = fetch(url)
     .then((response) => {
       return response.json();
     })
     .then((json) => {
       return json.news;
+    })
+
+    return cacheResponse(request, {
+      id: url,
+      age: 60 * 1000 // 60 seconds
     });
   }
 
   getPost(postId) {
 
-    let url = this.getURL(_.values({
+    let url = getURL(_.values({
       action: 'comments',
-      postId: postId,
+      postId: postId
     }));
 
-    return fetch(url)
+    let request = fetch(url)
     .then((response) => {
       return response.json();
     })
@@ -49,6 +66,11 @@ class API {
         post: null,
         comments: comments
       };
+    });
+
+    return cacheResponse(request, {
+      id: url,
+      age: 60 * 1000 // 60 seconds
     });
   }
 }
