@@ -5,8 +5,6 @@ import './_ActivityIndicator.scss';
 import React from 'react';
 import classnames from 'classnames';
 
-let { PropTypes } = React;
-
 class ActivityIndicator extends React.Component {
 
   getClassName() {
@@ -16,7 +14,6 @@ class ActivityIndicator extends React.Component {
   render() {
     return (
       <div className={this.getClassName()}>
-        Loading...
       </div>
     );
   }
