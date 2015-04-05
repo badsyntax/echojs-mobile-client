@@ -26,7 +26,7 @@ class NewsList extends React.Component {
   }
 }
 
-NewsList.propTypes =  {
+NewsList.propTypes = {
   posts: PropTypes.array.isRequired
 };
 

@@ -1,5 +1,6 @@
 'use strict';
 
+import _ from 'lodash';
 import React from 'react';
 import NewsList from '../NewsList/NewsList';
 import AppActions from '../../actions/AppActions';
@@ -60,7 +61,7 @@ class NewsPage extends React.Component {
   }
 }
 
-NewsPage.willTransitionTo = (transition, params) => {
+NewsPage.willTransitionTo = () => {
   NewsStore.reset();
   AppActions.getNews();
 };

@@ -33,8 +33,8 @@ class Icon extends React.Component {
   }
 }
 
-Icon.propTypes =  {
-  type: PropTypes.string.isRequired,
+Icon.propTypes = {
+  type: PropTypes.string.isRequired
 };
 
 export default Icon;

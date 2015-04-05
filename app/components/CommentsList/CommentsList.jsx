@@ -35,7 +35,7 @@ class CommentsList extends React.Component {
   }
 }
 
-CommentsList.propTypes =  {
+CommentsList.propTypes = {
   comments: PropTypes.array.isRequired
 };
 

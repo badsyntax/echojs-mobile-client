@@ -15,7 +15,7 @@ class LeftNav extends React.Component {
     super(...args);
     this.state = {
       selectedIndex: null
-    }
+    };
   }
 
   render() {
@@ -42,8 +42,8 @@ class LeftNav extends React.Component {
 
     for (var i = menuItems.length - 1; i >= 0; i--) {
       currentItem = menuItems[i];
-      if (currentItem.route && this.context.router.isActive(currentItem.route)) return i;
-    };
+      if (currentItem.route && this.context.router.isActive(currentItem.route)) { return i; }
+    }
   }
 
   _onLeftNavChange(e, key, payload) {

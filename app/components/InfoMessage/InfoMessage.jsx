@@ -30,7 +30,7 @@ class InfoMessage extends React.Component {
   }
 }
 
-InfoMessage.propTypes =  {
+InfoMessage.propTypes = {
   type: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired
 };
