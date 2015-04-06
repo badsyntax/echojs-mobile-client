@@ -4,10 +4,11 @@ import './_CommentsListItem.scss';
 
 import React from 'react';
 import classnames from 'classnames';
-import moment from 'moment';
+import ReactIntl from 'react-intl';
 import AppActions from '../../actions/AppActions';
 
 let { PropTypes } = React;
+let { FormattedRelative } = ReactIntl;
 
 class CommentsListItem extends React.Component {
 
@@ -17,7 +18,7 @@ class CommentsListItem extends React.Component {
 
   render() {
     let item = this.props.item;
-    let timeFromNow = moment(new Date(item.ctime * 1000)).fromNow();
+    let time = new Date(item.ctime * 1000);
     return (
       <article className={this.getClassName()}>
         <ul className="comments-list-item__metadata">
@@ -25,7 +26,7 @@ class CommentsListItem extends React.Component {
             <a href={'http://www.echojs.com/user/' + item.username}>{item.username}</a>
           </li>
           <li className="comments-list-item__metadata-time">
-            {timeFromNow}
+            <FormattedRelative value={time} />
           </li>
         </ul>
         <div className="comments-list-item__body">{item.body}</div>

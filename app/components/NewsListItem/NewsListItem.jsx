@@ -5,7 +5,6 @@ import './_NewsListItem.scss';
 import React from 'react';
 import Router from 'react-router';
 import classnames from 'classnames';
-import moment from 'moment';
 
 import ReactIntl from 'react-intl';
 

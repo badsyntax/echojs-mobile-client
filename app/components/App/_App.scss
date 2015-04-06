@@ -15,3 +15,27 @@
 .app-bar__refresh {
   float: right;
 }
+
+.page-transition-enter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.01;
+}
+
+.page-transition-enter.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity .1s ease-in;
+}
+
+.page-transition-leave {
+  opacity: 1;
+  transition: opacity .1s ease-in;
+}
+
+.page-transition-leave.page-transition-leave-active {
+  opacity: 0.01;
+}
+

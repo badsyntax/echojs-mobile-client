@@ -15,9 +15,9 @@ import {
 } from '../../constants/AppConstants';
 
 let { Link } = Router;
-
 let { AppBar, AppCanvas, IconButton } = mui;
 let { RouteHandler } = Router;
+let TransitionGroup = React.addons.CSSTransitionGroup;
 
 class App extends React.Component {
 
@@ -36,10 +36,10 @@ class App extends React.Component {
     let refreshButton = refreshButtonEnabled ? (
       <Link to="home">
         <IconButton
-          disabled={!refreshButtonEnabled}
-          touch={true}
           className={'app-bar__refresh'}
-          onTouchTap={this.onRefreshButtonTap.bind(this)}>
+          disabled={!refreshButtonEnabled}
+          onTouchTap={this.onRefreshButtonTap.bind(this)}
+          touch={true}>
           <Icon type={'refresh'} />
         </IconButton>
       </Link>
@@ -55,11 +55,15 @@ class App extends React.Component {
       </AppBar>
     );
 
+    var name = this.context.router.getCurrentPath();
+
     let appCanvas = (
       <AppCanvas predefinedLayout={1}>
         {appBar}
         <LeftNav ref={'leftNav'} />
-        <RouteHandler/>
+        <TransitionGroup component={'div'} transitionName={'page-transition'}>
+          <RouteHandler key={name} />
+        </TransitionGroup>
       </AppCanvas>
     );
 

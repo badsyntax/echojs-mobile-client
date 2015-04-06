@@ -8,7 +8,6 @@ import PostStore from '../../stores/PostStore';
 import NewsStore from '../../stores/NewsStore';
 import NewsListItem from '../NewsListItem/NewsListItem';
 import ActivityIndicator from '../ActivityIndicator/ActivityIndicator';
-import InfoMessage from '../InfoMessage/InfoMessage';
 
 function getState(state) {
   return _.merge({
@@ -63,26 +62,11 @@ class PostPage extends React.Component {
     );
   }
 
-  getInfoMessage() {
-    let type = null;
-    let message = null;
-    if (!this.state.isLoading && !this.state.comments.length) {
-      type = 'info';
-      message = '(No comments)';
-    }
-    return message ? (
-      <InfoMessage
-        type={type}
-        message={message} />
-    ) : null;
-  }
-
   render() {
     return (
       <div className={'mui-app-content-canvas'}>
         {this.getPost()}
         {this.getActivityIndicator()}
-        {this.getInfoMessage()}
         {this.getComments()}
       </div>
     );
