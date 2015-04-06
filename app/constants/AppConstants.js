@@ -1,5 +1,7 @@
 'use strict';
 
+import pkg from '../../package';
+
 export const APP_TITLE = 'Echo JS';
 
 export const ACTION_POSTS_GET = 'ACTION_POSTS_GET';
@@ -22,3 +24,12 @@ export const SINGLE_POST_CLICK = 'SINGLE_POST_CLICK';
 export const ACTION_REFRESH_NEWS = 'ACTION_REFRESH_NEWS';
 
 export const API_ENDPOINT = 'http://echojs-api.proxima.cc';
+
+export const BUG_REPORT_EMAIL = 'willis.rh@gmail.com';
+
+export const BUG_REPORT_SUBJECT = 'EchoJS Android App Bug Report';
+
+export const BUG_REPORT_BODY = [
+  'Time: ' + Date.now(),
+  'Version: ' + pkg.version
+].join('\s\n');

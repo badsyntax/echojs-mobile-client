@@ -1,13 +1,35 @@
 import './_LeftNav.scss';
 
 import React from 'react';
+import util from 'util';
 import Router from 'react-router';
 import mui from 'material-ui';
 
+import {
+  BUG_REPORT_EMAIL,
+  BUG_REPORT_SUBJECT,
+  BUG_REPORT_BODY
+} from '../../constants/AppConstants';
+
+let { MenuItem } = mui;
+
+let emailLink = util.format(
+  'mailto:%s?subject=%s&body=%s',
+  encodeURIComponent(BUG_REPORT_EMAIL),
+  encodeURIComponent(BUG_REPORT_SUBJECT),
+  encodeURIComponent(BUG_REPORT_BODY)
+);
+
 let menuItems = [
-    { route: 'home', text: 'Posts' },
-    { route: 'about', text: 'About' }
-  ];
+  { route: 'home', text: 'Posts' },
+  { route: 'about', text: 'About' },
+  {
+    type: MenuItem.Types.LINK,
+    payload: emailLink,
+    text: 'Report an issue',
+    target: '_blank'
+  }
+];
 
 class LeftNav extends React.Component {
 

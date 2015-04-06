@@ -44,6 +44,11 @@ var loaders = [
     loaders: ['react-hot', 'babel-loader?optional=runtime']
   },
   {
+    test: /\.json$/,
+    exclude: /node_modules/,
+    loaders: ['json-loader']
+  },
+  {
     test: /\.css$/,
     loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
   },
