@@ -19,7 +19,7 @@ class LeftNav extends React.Component {
   }
 
   render() {
-    var header = <div className={'logo'} onClick={this._onHeaderClick.bind(this)}>Echo JS</div>;
+    var header = <div className={'logo'} onClick={this.onHeaderClick.bind(this)}>Echo JS</div>;
 
     return (
       <mui.LeftNav
@@ -28,8 +28,8 @@ class LeftNav extends React.Component {
         isInitiallyOpen={false}
         header={header}
         menuItems={menuItems}
-        selectedIndex={this._getSelectedIndex()}
-        onChange={this._onLeftNavChange.bind(this)} />
+        selectedIndex={this.getSelectedIndex()}
+        onChange={this.onLeftNavChange.bind(this)} />
     );
   }
 
@@ -37,7 +37,7 @@ class LeftNav extends React.Component {
     this.refs.leftNav.toggle();
   }
 
-  _getSelectedIndex() {
+  getSelectedIndex() {
     var currentItem;
 
     for (var i = menuItems.length - 1; i >= 0; i--) {
@@ -46,11 +46,11 @@ class LeftNav extends React.Component {
     }
   }
 
-  _onLeftNavChange(e, key, payload) {
+  onLeftNavChange(e, key, payload) {
     this.context.router.transitionTo(payload.route);
   }
 
-  _onHeaderClick() {
+  onHeaderClick() {
     this.context.router.transitionTo('home');
     this.refs.leftNav.close();
   }

@@ -9,7 +9,7 @@ import moment from 'moment';
 
 import ReactIntl from 'react-intl';
 
-let { IntlMixin, FormattedRelative } = ReactIntl;
+let { FormattedRelative } = ReactIntl;
 
 let { PropTypes } = React;
 let { Link } = Router;
@@ -51,7 +51,7 @@ class NewsListItem extends React.Component {
   }
 }
 
-NewsListItem.propTypes =  {
+NewsListItem.propTypes = {
   item: PropTypes.object.isRequired
 };
 

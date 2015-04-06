@@ -13,7 +13,7 @@ let cache = {};
 function fetchJson(url) {
   return fetch(url).then((response) => {
     return response.json();
-  })
+  });
 }
 
 function cachedJsonFetch(url, options) {
@@ -68,7 +68,7 @@ class API {
         post: null,
         comments: comments
       };
-    })
+    });
   }
 }
 
