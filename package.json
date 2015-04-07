@@ -9,7 +9,7 @@
   "scripts": {
     "env": "env",
     "prerelease": "npm test",
-    "prestart": "npm install",
+    "prestart": "npm install && npm run lint",
     "prewebpack": "npm run clean",
     "preemulate": "npm run build:release",
     "clean": "rm -rf $npm_package_config_build_dir ./client/plugins ./client/platforms/android/ant-build ./client/platforms/android/assets && mkdir $npm_package_config_build_dir client/platforms/android/assets",
@@ -111,7 +111,7 @@
         2,
         "single"
       ],
-      "react/display-name": 1,
+      "react/display-name": 0,
       "react/jsx-quotes": 1,
       "react/jsx-no-undef": 1,
       "react/jsx-sort-props": 1,
