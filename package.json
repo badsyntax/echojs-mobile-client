@@ -38,15 +38,14 @@
   },
   "devDependencies": {
     "autoprefixer-core": "^5.1.8",
-    "babel-core": "^5.0.8",
-    "babel-eslint": "^2.0.2",
+    "babel-core": "^5.0.9",
     "babel-jest": "^5.0.1",
     "babel-loader": "^5.0.0",
-    "babel-runtime": "^5.0.8",
+    "babel-runtime": "^5.0.9",
     "cordova": "^4.3.0",
     "css-loader": "^0.9.1",
     "eslint": "^0.18.0",
-    "eslint-plugin-react": "^2.0.2",
+    "eslint-plugin-react": "^2.1.0",
     "extract-text-webpack-plugin": "^0.5.0",
     "file-loader": "^0.8.1",
     "html-loader": "^0.2.3",
@@ -60,7 +59,7 @@
     "style-loader": "^0.9.0",
     "template-html-loader": "0.0.3",
     "url-loader": "^0.5.5",
-    "webpack": "^1.7.3",
+    "webpack": "^1.8.0",
     "webpack-dev-server": "^1.8.0"
   },
   "jest": {
