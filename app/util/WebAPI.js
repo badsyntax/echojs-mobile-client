@@ -16,7 +16,7 @@ function fetchJson(url) {
   });
 }
 
-function cachedJsonFetch(url, options) {
+function cacheFetchJson(url, options) {
   if (url in cache && Date.now() - options.age <= cache[url].time) {
     return cache[url].promise;
   }
@@ -47,7 +47,7 @@ class API {
       count: 30
     }, opts)));
 
-    return cachedJsonFetch(url, {
+    return cacheFetchJson(url, {
       age: 60 * 1000 // 60 seconds
     })
     .then((json) => {

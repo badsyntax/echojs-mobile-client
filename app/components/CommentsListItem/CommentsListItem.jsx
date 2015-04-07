@@ -4,11 +4,10 @@ import './_CommentsListItem.scss';
 
 import React from 'react';
 import classnames from 'classnames';
-import ReactIntl from 'react-intl';
+import { FormattedRelative } from 'react-intl';
 import AppActions from '../../actions/AppActions';
 
 let { PropTypes } = React;
-let { FormattedRelative } = ReactIntl;
 
 class CommentsListItem extends React.Component {
 

@@ -57,8 +57,8 @@ class PostPage extends React.Component {
   getComments() {
     return (
       <CommentsList
-        post={this.state.post}
-        comments={this.state.comments} />
+        comments={this.state.comments}
+        post={this.state.post} />
     );
   }
 

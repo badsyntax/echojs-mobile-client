@@ -2,16 +2,17 @@ import './_LeftNav.scss';
 
 import React from 'react';
 import util from 'util';
-import Router from 'react-router';
-import mui from 'material-ui';
+
+import {
+  MenuItem,
+  LeftNav as MuiLeftNav
+} from 'material-ui';
 
 import {
   BUG_REPORT_EMAIL,
   BUG_REPORT_SUBJECT,
   BUG_REPORT_BODY
 } from '../../constants/AppConstants';
-
-let { MenuItem } = mui;
 
 let emailLink = util.format(
   'mailto:%s?subject=%s&body=%s',
@@ -44,14 +45,14 @@ class LeftNav extends React.Component {
     var header = <div className={'logo'} onClick={this.onHeaderClick.bind(this)}>Echo JS</div>;
 
     return (
-      <mui.LeftNav
-        ref={'leftNav'}
+      <MuiLeftNav
         docked={false}
-        isInitiallyOpen={false}
         header={header}
+        isInitiallyOpen={false}
         menuItems={menuItems}
-        selectedIndex={this.getSelectedIndex()}
-        onChange={this.onLeftNavChange.bind(this)} />
+        onChange={this.onLeftNavChange.bind(this)}
+        ref={'leftNav'}
+        selectedIndex={this.getSelectedIndex()} />
     );
   }
 
@@ -60,10 +61,8 @@ class LeftNav extends React.Component {
   }
 
   getSelectedIndex() {
-    var currentItem;
-
-    for (var i = menuItems.length - 1; i >= 0; i--) {
-      currentItem = menuItems[i];
+    for (let i = menuItems.length - 1; i >= 0; i--) {
+      let currentItem = menuItems[i];
       if (currentItem.route && this.context.router.isActive(currentItem.route)) { return i; }
     }
   }

@@ -9,7 +9,7 @@ let { PropTypes } = React;
 
 class CommentsList extends React.Component {
 
-  getCommentsListItem(item) {
+  getCommentsListItem(item = {}) {
     return (
       <li key={'comments-list-item-' + item.ctime}>
         <CommentsListItem item={item} />

@@ -9,7 +9,7 @@ let { PropTypes } = React;
 
 class NewsList extends React.Component {
 
-  getNewsListItem(item) {
+  getNewsListItem(item = {}) {
     return (
       <NewsListItem
         item={item}

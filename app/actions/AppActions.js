@@ -30,7 +30,7 @@ export default {
     });
   },
 
-  getPost(postId) {
+  getPost(postId = 0) {
     WebAPI.getPost(postId)
     .then((data) => {
       AppDispatcher.dispatch({

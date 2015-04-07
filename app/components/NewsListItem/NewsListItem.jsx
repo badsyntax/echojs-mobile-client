@@ -3,15 +3,11 @@
 import './_NewsListItem.scss';
 
 import React from 'react';
-import Router from 'react-router';
 import classnames from 'classnames';
-
-import ReactIntl from 'react-intl';
-
-let { FormattedRelative } = ReactIntl;
+import { Link } from 'react-router';
+import { FormattedRelative } from 'react-intl';
 
 let { PropTypes } = React;
-let { Link } = Router;
 
 class NewsListItem extends React.Component {
 
@@ -25,7 +21,7 @@ class NewsListItem extends React.Component {
     return (
       <article className={this.getClassName()}>
         <h2>
-          <a rel="nofollow" href={item.url}>
+          <a href={item.url} rel="nofollow" target={'_blank'}>
             {item.title}
           </a>
         </h2>
@@ -33,14 +29,14 @@ class NewsListItem extends React.Component {
           <span>{item.up} up and {item.down} down,</span>
           <span>posted by</span>
           <span>
-            <a href={'http://echojs.com/user/' + item.username} target="_blank">
+            <a href={'http://echojs.com/user/' + item.username} target={'_blank'}>
               {item.username}
             </a>
           </span>
           <span><FormattedRelative value={time} /></span>
           <span>with</span>
           <span>
-            <Link to="post" params={{postId: this.props.item.id}}>
+            <Link params={{postId: this.props.item.id}} to="post" >
               {item.comments} comments
             </Link>
           </span>

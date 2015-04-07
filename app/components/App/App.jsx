@@ -3,8 +3,8 @@
 import './_App.scss';
 
 import React from 'react';
-import Router from 'react-router';
-import mui from 'material-ui';
+import { Link, RouteHandler } from 'react-router';
+import { AppBar, AppCanvas, IconButton } from 'material-ui';
 import classnames from 'classnames';
 import LeftNav from '../LeftNav/LeftNav';
 import Icon from '../Icon/Icon';
@@ -14,9 +14,6 @@ import {
   APP_TITLE
 } from '../../constants/AppConstants';
 
-let { Link } = Router;
-let { AppBar, AppCanvas, IconButton } = mui;
-let { RouteHandler } = Router;
 let TransitionGroup = React.addons.CSSTransitionGroup;
 
 class App extends React.Component {

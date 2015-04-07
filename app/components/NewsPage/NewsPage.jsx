@@ -62,9 +62,9 @@ class NewsPage extends React.Component {
   getNewsList() {
     return (
       <NewsList
-        posts={this.state.posts}
+        hasError={this.state.hasError}
         isLoading={this.state.isLoading}
-        hasError={this.state.hasError} />
+        posts={this.state.posts} />
     );
   }
 

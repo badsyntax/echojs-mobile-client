@@ -12,8 +12,8 @@ let {
 
 export default (
   <Route handler={App}>
-    <Route name="post" path="/post/:postId" handler={PostPage} />
-    <Route name="about" path="/about" handler={AboutPage} />
-    <DefaultRoute name="home" handler={NewsPage} />
+    <Route handler={PostPage} name="post" path="/post/:postId" />
+    <Route handler={AboutPage} name="about" path="/about" />
+    <DefaultRoute handler={NewsPage} name="home" />
   </Route>
 );
