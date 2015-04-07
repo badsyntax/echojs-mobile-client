@@ -1,4 +1,5 @@
 .info-message {
+  margin: 14px;
   .mui-paper-container {
     padding: 10px;
     margin: 10px 0;
@@ -8,5 +9,8 @@
   }
   &.-error {
     color: red;
+  }
+  .icon {
+    fill: #888;
   }
 }

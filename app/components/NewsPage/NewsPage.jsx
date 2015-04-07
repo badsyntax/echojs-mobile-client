@@ -2,10 +2,9 @@
 
 import _ from 'lodash';
 import React from 'react';
-import NewsList from '../NewsList/NewsList';
 import AppActions from '../../actions/AppActions';
 import NewsStore from '../../stores/NewsStore';
-import ActivityIndicator from '../ActivityIndicator/ActivityIndicator';
+import { NewsList, ActivityIndicator, InfoMessage } from '../';
 import AppDispatcher from '../../dispatcher/AppDispatcher';
 
 import {
@@ -38,6 +37,7 @@ class NewsPage extends React.Component {
           break;
         case ACTION_REFRESH_NEWS:
           this.setState({
+            hasError: false,
             isLoading: true
           });
           break;
@@ -61,17 +61,16 @@ class NewsPage extends React.Component {
   }
 
   getInfoMessage() {
-    let type = null;
-    let message = null;
     if (this.state.hasError) {
-      type = 'error';
-      message = 'Unable to load news';
+      let type = 'warning';
+      let message = 'Unable to load news, please try again.';
+      return (
+        <InfoMessage
+        message={message}
+        type={type} />
+      );
     }
-    return message ? (
-      <InfoMessage
-        type={type}
-        message={message} />
-    ) : null;
+    return null;
   }
 
   getActivityIndicator() {

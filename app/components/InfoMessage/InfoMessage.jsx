@@ -4,6 +4,8 @@ import './_InfoMessage.scss';
 
 import React from 'react';
 import classnames from 'classnames';
+import { Icon } from '../';
+import { IconButton } from 'material-ui';
 
 let { PropTypes } = React;
 
@@ -23,6 +25,7 @@ class InfoMessage extends React.Component {
     return (
       <div className={this.getClassName()}>
         <div className="mui-paper-container mui-z-depth-bottom">
+          <Icon size={18} type={this.props.type} />
           {this.props.message}
         </div>
       </div>

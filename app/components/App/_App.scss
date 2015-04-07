@@ -15,6 +15,9 @@
 
 .app-bar__refresh {
   float: right;
+  .icon {
+    margin: 0;
+  }
 }
 
 .page-transition-enter {

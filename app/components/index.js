@@ -4,6 +4,7 @@ import App from './App/App';
 import CommentsList from './CommentsList/CommentsList';
 import CommentsListItem from './CommentsListItem/CommentsListItem';
 import Icon from './Icon/Icon';
+import InfoMessage from './InfoMessage/InfoMessage';
 import LeftNav from './LeftNav/LeftNav';
 import NewsList from './NewsList/NewsList';
 import NewsListItem from './NewsListItem/NewsListItem';
@@ -16,6 +17,7 @@ export {
   App,
   CommentsList,
   CommentsListItem,
+  InfoMessage,
   Icon,
   LeftNav,
   NewsList,
