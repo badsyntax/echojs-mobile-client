@@ -9,7 +9,8 @@ import ActivityIndicator from '../ActivityIndicator/ActivityIndicator';
 import AppDispatcher from '../../dispatcher/AppDispatcher';
 
 import {
-  ACTION_REFRESH_NEWS
+  ACTION_REFRESH_NEWS,
+  ACTION_POSTS_GET_ERROR
 } from '../../constants/AppConstants';
 
 function getState(state) {
@@ -29,6 +30,12 @@ class NewsPage extends React.Component {
 
     AppDispatcher.register((action) => {
       switch(action.actionType) {
+        case ACTION_POSTS_GET_ERROR:
+          this.setState({
+            hasError: true,
+            isLoading: false
+          });
+          break;
         case ACTION_REFRESH_NEWS:
           this.setState({
             isLoading: true
@@ -53,6 +60,20 @@ class NewsPage extends React.Component {
     }));
   }
 
+  getInfoMessage() {
+    let type = null;
+    let message = null;
+    if (this.state.hasError) {
+      type = 'error';
+      message = 'Unable to load news';
+    }
+    return message ? (
+      <InfoMessage
+        type={type}
+        message={message} />
+    ) : null;
+  }
+
   getActivityIndicator() {
     return this.state.isLoading ? (
       <ActivityIndicator />
@@ -72,6 +93,7 @@ class NewsPage extends React.Component {
     return (
       <div className={'mui-app-content-canvas'}>
         {this.getActivityIndicator()}
+        {this.getInfoMessage()}
         {this.getNewsList()}
       </div>
     );

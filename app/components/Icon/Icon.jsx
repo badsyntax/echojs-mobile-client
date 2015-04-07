@@ -4,9 +4,10 @@ import './_Icon.scss';
 
 import React from 'react';
 import classnames from 'classnames';
+import refreshIcon from '!!raw!../../assets/icons/navigation/svg/ic_refresh_24px.svg';
 
 let icons = {
-  refresh: require('!!raw!../../assets/icons/navigation/svg/ic_refresh_24px.svg')
+  refresh: refreshIcon
 };
 
 let { PropTypes } = React;

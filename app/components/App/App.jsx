@@ -3,16 +3,13 @@
 import './_App.scss';
 
 import React from 'react';
-import { Link, RouteHandler } from 'react-router';
-import { AppBar, AppCanvas, IconButton } from 'material-ui';
 import classnames from 'classnames';
-import LeftNav from '../LeftNav/LeftNav';
-import Icon from '../Icon/Icon';
 import AppActions from '../../actions/AppActions';
 
-import {
-  APP_TITLE
-} from '../../constants/AppConstants';
+import { Link, RouteHandler } from 'react-router';
+import { AppBar, AppCanvas, IconButton } from 'material-ui';
+import { LeftNav, Icon } from '../';
+import { APP_TITLE } from '../../constants/AppConstants';
 
 let TransitionGroup = React.addons.CSSTransitionGroup;
 

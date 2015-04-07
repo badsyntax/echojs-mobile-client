@@ -1,6 +1,6 @@
 'use strict';
 
-import EventEmitter from 'events';
+import { EventEmitter } from 'events';
 
 export default class BaseStore extends EventEmitter {
 

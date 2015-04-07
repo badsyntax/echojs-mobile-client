@@ -14,7 +14,7 @@ import {
   BUG_REPORT_BODY
 } from '../../constants/AppConstants';
 
-let emailLink = util.format(
+let emailLinkText = util.format(
   'mailto:%s?subject=%s&body=%s',
   encodeURIComponent(BUG_REPORT_EMAIL),
   encodeURIComponent(BUG_REPORT_SUBJECT),
@@ -26,7 +26,7 @@ let menuItems = [
   { route: 'about', text: 'About' },
   {
     type: MenuItem.Types.LINK,
-    payload: emailLink,
+    payload: emailLinkText,
     text: 'Report an issue',
     target: '_blank'
   }

@@ -3,7 +3,7 @@
 import './_CommentsList.scss';
 
 import React from 'react';
-import CommentsListItem from '../CommentsListItem/CommentsListItem';
+import { CommentsListItem } from '../';
 
 let { PropTypes } = React;
 

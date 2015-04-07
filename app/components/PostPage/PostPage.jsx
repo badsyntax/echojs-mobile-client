@@ -2,12 +2,11 @@
 
 import _ from 'lodash';
 import React from 'react';
-import CommentsList from '../CommentsList/CommentsList';
 import AppActions from '../../actions/AppActions';
 import PostStore from '../../stores/PostStore';
 import NewsStore from '../../stores/NewsStore';
-import NewsListItem from '../NewsListItem/NewsListItem';
-import ActivityIndicator from '../ActivityIndicator/ActivityIndicator';
+
+import { NewsListItem, CommentsList, ActivityIndicator } from '../';
 
 function getState(state) {
   return _.merge({

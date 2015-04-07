@@ -1,14 +1,16 @@
 import React from 'react';
-import Router from 'react-router';
-import App from './components/App/App';
-import NewsPage from './components/NewsPage/NewsPage';
-import PostPage from './components/PostPage/PostPage';
-import AboutPage from './components/AboutPage/AboutPage';
 
-let {
+import {
   Route,
   DefaultRoute
-} = Router;
+} from 'react-router';
+
+import {
+  App,
+  NewsPage,
+  PostPage,
+  AboutPage
+} from './components';
 
 export default (
   <Route handler={App}>

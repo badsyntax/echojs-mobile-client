@@ -3,7 +3,7 @@
 import './_NewsList.scss';
 
 import React from 'react';
-import NewsListItem from '../NewsListItem/NewsListItem';
+import { NewsListItem } from '../';
 
 let { PropTypes } = React;
 
