@@ -6,6 +6,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { Link } from 'react-router';
 import { FormattedRelative } from 'react-intl';
+import { Paper } from 'material-ui';
 
 let { PropTypes } = React;
 
@@ -34,13 +35,18 @@ class NewsListItem extends React.Component {
             </a>
           </span>
           <span><FormattedRelative value={time} /></span>
-          <span>with</span>
-          <span>
-            <Link params={{postId: this.props.item.id}} to="post" >
+          <span className={'listing-item-metadata__comments'}>
+            <span>with</span>
+            <Link params={{postId: this.props.item.id}} to="post">
               {item.comments} comments
             </Link>
           </span>
         </footer>
+        <Paper circle={true} className="list-item-comments" zDepth={1}>
+          <Link params={{postId: this.props.item.id}} to="post">
+            <p>{item.comments}</p>
+          </Link>
+        </Paper>
       </article>
     );
   }

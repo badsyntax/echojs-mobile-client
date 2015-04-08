@@ -11,8 +11,6 @@ import { AppBar, AppCanvas, IconButton } from 'material-ui';
 import { LeftNav, Icon } from '../';
 import { APP_TITLE } from '../../constants/AppConstants';
 
-let TransitionGroup = React.addons.CSSTransitionGroup;
-
 class App extends React.Component {
 
   onMenuIconButtonTouchTap() {
@@ -49,15 +47,11 @@ class App extends React.Component {
       </AppBar>
     );
 
-    var name = this.context.router.getCurrentPath();
-
     let appCanvas = (
       <AppCanvas predefinedLayout={1}>
         {appBar}
         <LeftNav ref={'leftNav'} />
-        <TransitionGroup component={'div'} transitionName={'page-transition'}>
-          <RouteHandler key={name} />
-        </TransitionGroup>
+        <RouteHandler key={this.context.router.getCurrentPath()} />
       </AppCanvas>
     );
 

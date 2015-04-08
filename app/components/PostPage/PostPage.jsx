@@ -1,5 +1,7 @@
 'use strict';
 
+import './_PostPage.scss';
+
 import _ from 'lodash';
 import React from 'react';
 import AppActions from '../../actions/AppActions';
@@ -61,11 +63,20 @@ class PostPage extends React.Component {
     );
   }
 
+  getNoCommentsMessage() {
+    let noCommentsMsg = null;
+    if (!this.state.isLoading && !this.state.comments.length) {
+      noCommentsMsg = <div className={'post-page__message'}>No comments.</div>;
+    }
+    return noCommentsMsg;
+  }
+
   render() {
     return (
-      <div className={'mui-app-content-canvas'}>
+      <div className={'mui-app-content-canvas post-page'}>
         {this.getPost()}
         {this.getActivityIndicator()}
+        {this.getNoCommentsMessage()}
         {this.getComments()}
       </div>
     );
@@ -77,6 +88,9 @@ PostPage.contextTypes = {
 };
 
 PostPage.willTransitionTo = function(transition, params) {
+  // We don't have an API to get the post data, so we'll attempt
+  // to set the post data from the news store, assuming the
+  // news store has data. This totally sucks.
   PostStore.reset();
   PostStore.set({
     post: NewsStore.getBy('id', params.postId)

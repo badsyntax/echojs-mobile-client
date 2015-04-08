@@ -63,8 +63,8 @@ var loaders = [
       'template-html-loader?' + [
         'raw=true',
         'engine=lodash',
-        'version='+pkg.version,
-        'cordova='+CORDOVA_BUILD
+        'version=' + pkg.version,
+        'cordova=' + CORDOVA_BUILD
       ].join('&')
     ].join('!')
   },

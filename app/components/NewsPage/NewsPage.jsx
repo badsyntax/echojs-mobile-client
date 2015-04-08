@@ -22,28 +22,28 @@ function getState(state) {
 class NewsPage extends React.Component {
 
   constructor(...args) {
-
     super(...args);
     this.state = getState();
     this.onChange = this.onChange.bind(this);
+    AppDispatcher.register(this.actionHandler.bind(this));
+  }
 
-    AppDispatcher.register((action) => {
-      switch(action.actionType) {
-        case ACTION_POSTS_GET_ERROR:
-          this.setState({
-            hasError: true,
-            isLoading: false
-          });
-          break;
-        case ACTION_REFRESH_NEWS:
-          this.setState({
-            hasError: false,
-            isLoading: true
-          });
-          break;
-        default:
-      }
-    });
+  actionHandler(action) {
+    switch(action.actionType) {
+      case ACTION_POSTS_GET_ERROR:
+        this.setState({
+          hasError: true,
+          isLoading: false
+        });
+        break;
+      case ACTION_REFRESH_NEWS:
+        this.setState({
+          hasError: false,
+          isLoading: true
+        });
+        break;
+      default:
+    }
   }
 
   componentDidMount() {
@@ -100,7 +100,6 @@ class NewsPage extends React.Component {
 }
 
 NewsPage.willTransitionTo = () => {
-  console.log('transition to');
   NewsStore.reset();
   AppActions.getNews();
 };

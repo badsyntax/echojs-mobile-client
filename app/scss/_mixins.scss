@@ -8,3 +8,65 @@
     font-style: $font-style;
   }
 }
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+
+  @else if $point == laptop {
+    @media (min-width: $laptop) {
+      @content;
+    }
+  }
+
+  @else if $point == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  }
+
+  @else if $point == tablet-landscape {
+    @media (min-width: $tablet) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $point == phablet {
+    @media (min-width: $phablet) {
+      @content;
+    }
+  }
+
+  @else if $point == mobile-only {
+    @media (max-width: $mobile-only) {
+      @content;
+    }
+  }
+
+  @else if $point == mobile-portrait {
+    @media (max-width: $mobile-only) and (orientation: portrait) {
+      @content;
+    }
+  }
+
+  @else if $point == mobile-landscape {
+    @media (max-width: $mobile-landscape) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $point == landscape {
+    @media (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $point == portrait {
+    @media (orientation: portrait) {
+      @content;
+    }
+  }
+}
