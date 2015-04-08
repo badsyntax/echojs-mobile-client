@@ -2,7 +2,7 @@
 <widget id="com.badsyntax.echojs" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>EchoJSNews</name>
     <description>
-        An example EchoJS mobile application.
+        An EchoJS mobile application.
     </description>
     <author email="willis.rh@gmail.com" href="http://github.com/badsyntax">
         Richard Willis

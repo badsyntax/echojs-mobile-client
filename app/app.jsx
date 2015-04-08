@@ -3,6 +3,7 @@
 import './index.html';
 import './scss/app.scss';
 import 'babel-core/polyfill';
+import './favicon.ico';
 
 import React from 'react';
 import Router from 'react-router';

@@ -3,7 +3,7 @@
     <preference name="loglevel" value="DEBUG" />
     <name>EchoJSNews</name>
     <description>
-        An example EchoJS mobile application.
+        An EchoJS mobile application.
     </description>
     <author email="willis.rh@gmail.com" href="http://github.com/badsyntax">
         Richard Willis

@@ -9,7 +9,7 @@
   "scripts": {
     "env": "env",
     "prerelease": "npm test",
-    "prestart": "npm install && npm run lint",
+    "prestart": "npm install && npm run lint && npm run clean",
     "prewebpack": "npm run clean",
     "preemulate": "npm run build:release",
     "clean": "rm -rf $npm_package_config_build_dir ./client/plugins ./client/platforms/android/ant-build ./client/platforms/android/assets && mkdir $npm_package_config_build_dir client/platforms/android/assets",
