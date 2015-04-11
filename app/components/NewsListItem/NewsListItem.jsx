@@ -6,7 +6,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { Link } from 'react-router';
 import { FormattedRelative } from 'react-intl';
-import { Paper } from 'material-ui';
+import { Paper, FloatingActionButton } from 'material-ui';
 
 let { PropTypes } = React;
 
@@ -19,6 +19,7 @@ class NewsListItem extends React.Component {
   render() {
     let item = this.props.item;
     let time = new Date(item.ctime * 1000);
+
     return (
       <article className={this.getClassName()}>
         <h2>
@@ -42,11 +43,15 @@ class NewsListItem extends React.Component {
             </Link>
           </span>
         </footer>
-        <Paper circle={true} className="list-item-comments" zDepth={1}>
-          <Link params={{postId: this.props.item.id}} to="post">
-            <p>{item.comments}</p>
-          </Link>
-        </Paper>
+        <Link params={{postId: this.props.item.id}} to="post">
+          <FloatingActionButton
+            className="list-item-comments"
+            mini={true}
+            secondary={true}
+            >
+            <span>{item.comments}</span>
+          </FloatingActionButton>
+        </Link>
       </article>
     );
   }
@@ -54,6 +59,10 @@ class NewsListItem extends React.Component {
 
 NewsListItem.propTypes = {
   item: PropTypes.object.isRequired
+};
+
+NewsListItem.contextTypes = {
+  router: PropTypes.func
 };
 
 export default NewsListItem;

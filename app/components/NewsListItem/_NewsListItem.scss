@@ -1,7 +1,7 @@
 @import "toolkit";
 
 .listing-item {
-  padding: 14px 44px 14px 0;
+  padding: 14px 49px 14px 0;
   border-bottom: 1px solid $faint-black;
   position: relative;
   h2 {
@@ -47,11 +47,23 @@
   height: 34px;
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 5px;
   margin-top: -18px;
   text-align: center;
-  p {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+  &.mui-paper.mui-z-depth-2 > .mui-z-depth-bottom {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+  }
+  &.mui-floating-action-button.mui-is-secondary .mui-floating-action-button-container {
+    &, &:hover {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+    }
+  }
+  span {
     color: #aaa;
+    line-height: 34px;
   }
   @include breakpoint(tablet) {
     display: none;
