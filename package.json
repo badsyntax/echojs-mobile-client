@@ -12,6 +12,7 @@
     "prestart": "npm install && npm run lint && npm run clean",
     "prewebpack": "npm run clean",
     "preemulate": "npm run build:release",
+    "predeploy": "npm run build:release",
     "clean": "rm -rf $npm_package_config_build_dir ./client/plugins ./client/platforms/android/ant-build ./client/platforms/android/assets && mkdir $npm_package_config_build_dir client/platforms/android/assets",
     "start": "NODE_ENV=development BUILD_TYPE=web node dev-server",
     "webpack": "webpack --colors --progress --config ./webpack.config.js",
@@ -22,7 +23,8 @@
     "cordova:build:release": "cd $npm_package_config_build_dir && cordova build --release android",
     "emulate": "cd $npm_package_config_build_dir && cordova emulate android",
     "lint": "eslint --ext .js --ext .jsx ./app && echo No linting errors.",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "./client/deploy.sh"
   },
   "dependencies": {
     "classnames": "^1.2.0",
