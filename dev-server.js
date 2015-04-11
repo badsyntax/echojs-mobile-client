@@ -11,7 +11,7 @@ var server = new WebpackDevServer(
   config.devServer
 );
 
-server.listen(port, 'localhost', function (err) {
+server.listen(port, '0.0.0.0', function (err) {
   if (err) { console.log(err); }
   console.log('Listening at localhost:%d', pkg.config.dev_port);
   opn('http://localhost:' + port);
