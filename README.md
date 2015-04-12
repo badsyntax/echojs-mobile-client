@@ -4,6 +4,10 @@
 
 * Install the android SDK: http://developer.android.com/sdk/
 * Install the latest Java JDK: http://www.oracle.com/technetwork/java/javase/downloads/
+* 
+## Running the server
+
+This client requires a proxy API to the EchoJS api. Install and run the server before running this client: https://github.com/badsyntax/echojs-mobile-server
 
 ## npm scripts
 
