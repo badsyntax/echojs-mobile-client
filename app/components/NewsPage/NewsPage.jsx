@@ -21,6 +21,7 @@ function getState(state) {
 
 class NewsPage extends React.Component {
 
+
   constructor(...args) {
     super(...args);
     this.state = getState();
@@ -48,6 +49,7 @@ class NewsPage extends React.Component {
 
   componentDidMount() {
     NewsStore.addChangeListener(this.onChange);
+    AppActions.getNews();
   }
 
   componentWillUnmount() {
@@ -101,7 +103,6 @@ class NewsPage extends React.Component {
 
 NewsPage.willTransitionTo = () => {
   NewsStore.reset();
-  AppActions.getNews();
 };
 
 export default NewsPage;

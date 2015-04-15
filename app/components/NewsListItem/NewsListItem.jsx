@@ -23,15 +23,17 @@ class NewsListItem extends React.Component {
     return (
       <article className={this.getClassName()}>
         <h2>
-          <a href={item.url} rel="nofollow" target={'_blank'}>
+          <a href={item.url} rel="nofollow" target={'_system'}>
             {item.title}
           </a>
         </h2>
         <footer className={'listing-item-metadata'}>
-          <span>{item.up} up and {item.down} down,</span>
-          <span>posted by</span>
+          <span className={'listing-item-metadata__mobile-hide'}>{item.up} up and {item.down} down,</span>
+          <span className={'listing-item-metadata__mobile-show'}>{item.up - item.down} points</span>
+          <span className={'listing-item-metadata__mobile-hide'}>posted by</span>
+          <span className={'listing-item-metadata__mobile-show'}>by</span>
           <span>
-            <a href={'http://echojs.com/user/' + item.username} target={'_blank'}>
+            <a href={'http://echojs.com/user/' + item.username} target={'_system'}>
               {item.username}
             </a>
           </span>
@@ -43,9 +45,8 @@ class NewsListItem extends React.Component {
             </Link>
           </span>
         </footer>
-        <Link params={{postId: this.props.item.id}} to="post">
+        <Link params={{postId: this.props.item.id}} to="post" className="list-item-comments">
           <FloatingActionButton
-            className="list-item-comments"
             mini={true}
             secondary={true}
             >

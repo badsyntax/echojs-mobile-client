@@ -64,7 +64,8 @@ var loaders = [
         'raw=true',
         'engine=lodash',
         'version=' + pkg.version,
-        'cordova=' + CORDOVA_BUILD
+        'cordova=' + CORDOVA_BUILD,
+        'title=' + pkg.description
       ].join('&')
     ].join('!')
   },

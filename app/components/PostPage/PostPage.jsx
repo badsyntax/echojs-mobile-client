@@ -28,6 +28,15 @@ class PostPage extends React.Component {
 
   componentDidMount() {
     PostStore.addChangeListener(this.onChange);
+    // We don't have an API to get the post data, so we'll attempt
+    // to set the post data from the news store, assuming the
+    // news store has data. This totally sucks.
+    let postId = this.context.router.getCurrentParams().postId;
+    PostStore.reset();
+    PostStore.set({
+      post: NewsStore.getBy('id', postId)
+    });
+    AppActions.getPost(postId);
   }
 
   componentWillUnmount() {
@@ -85,17 +94,6 @@ class PostPage extends React.Component {
 
 PostPage.contextTypes = {
   router: React.PropTypes.func.isRequired
-};
-
-PostPage.willTransitionTo = function(transition, params) {
-  // We don't have an API to get the post data, so we'll attempt
-  // to set the post data from the news store, assuming the
-  // news store has data. This totally sucks.
-  PostStore.reset();
-  PostStore.set({
-    post: NewsStore.getBy('id', params.postId)
-  });
-  AppActions.getPost(params.postId);
 };
 
 export default PostPage;

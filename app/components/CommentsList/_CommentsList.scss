@@ -1,4 +1,10 @@
+@import "toolkit";
+
 .comments-list {
+  padding: 0 14px;
+  @include breakpoint(phablet) {
+    padding: 0 18px;
+  }
   ul {
     list-style: none;
   }

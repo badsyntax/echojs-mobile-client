@@ -2,6 +2,7 @@
   "name": "echojs-mobile-client",
   "version": "0.0.6",
   "repository": "https://github.com/badsyntax/echojs-mobile-client",
+  "description": "EchoJS News",
   "config": {
     "build_dir": "./client/www",
     "dev_port": 8000
@@ -9,7 +10,7 @@
   "scripts": {
     "env": "env",
     "prerelease": "npm test",
-    "prestart": "npm install && npm run lint && npm run clean",
+    "prestart": "npm install && npm run clean",
     "prewebpack": "npm run clean",
     "preemulate": "npm run build:release",
     "predeploy": "npm run build:release",
@@ -24,6 +25,7 @@
     "emulate": "cd $npm_package_config_build_dir && cordova emulate android",
     "lint": "eslint --ext .js --ext .jsx ./app && echo No linting errors.",
     "test": "jest",
+    "install-plugins": "cd $npm_package_config_build_dir && cordova plugin add org.apache.cordova.inappbrowser",
     "deploy": "./client/deploy.sh"
   },
   "dependencies": {
@@ -39,14 +41,14 @@
     "whatwg-fetch": "^0.7.0"
   },
   "devDependencies": {
-    "autoprefixer-core": "^5.1.8",
-    "babel-core": "^5.0.9",
+    "autoprefixer-core": "^5.1.9",
+    "babel-core": "^5.1.9",
     "babel-jest": "^5.0.1",
     "babel-loader": "^5.0.0",
-    "babel-runtime": "^5.0.9",
+    "babel-runtime": "^5.1.9",
     "cordova": "^4.3.0",
-    "css-loader": "^0.9.1",
-    "eslint": "^0.18.0",
+    "css-loader": "^0.10.1",
+    "eslint": "^0.19.0",
     "eslint-plugin-react": "^2.1.0",
     "extract-text-webpack-plugin": "^0.5.0",
     "file-loader": "^0.8.1",
@@ -56,12 +58,12 @@
     "opn": "^1.0.1",
     "postcss-loader": "^0.3.0",
     "raw-loader": "^0.5.1",
-    "react-hot-loader": "^1.2.4",
+    "react-hot-loader": "^1.2.5",
     "sass-loader": "^0.4.2",
-    "style-loader": "^0.9.0",
+    "style-loader": "^0.10.2",
     "template-html-loader": "0.0.3",
     "url-loader": "^0.5.5",
-    "webpack": "^1.8.0",
+    "webpack": "^1.8.4",
     "webpack-dev-server": "^1.8.0"
   },
   "jest": {

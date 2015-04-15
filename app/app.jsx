@@ -19,6 +19,14 @@ function init() {
 
 document.addEventListener('deviceready', init, false);
 
+// document.addEventListener('click', function(e) {
+//   var target = e.target.target;
+//   if (target === '_system') {
+//     e.preventDefault();
+//     window.open(e.target.href, target);
+//   }
+// }, false);
+
 if (window.cordova === undefined) {
   init();
 }
