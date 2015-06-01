@@ -8,19 +8,18 @@ import 'babel-core/polyfill';
 import React from 'react';
 import Router from 'react-router';
 import routes from './routes';
-import { DEBUG } from './constants/AppConstants';
+import { DEBUG_PERF } from './constants/AppConstants';
+import openURL from './util/openURL';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 function debug(cb) {
-  if (true || !DEBUG) { cb(); return; }
-  console.log(window.location.toString());
+  if (!DEBUG_PERF) { cb(); return; }
   let Perf = React.addons.Perf;
   Perf.start();
   cb();
   Perf.stop();
   Perf.printInclusive();
-  Perf.printWasted();
 }
 
 function init() {
@@ -33,15 +32,6 @@ function init() {
 }
 
 document.addEventListener('deviceready', init, false);
+document.addEventListener('click', openURL, false);
 
-// document.addEventListener('click', function(e) {
-//   var target = e.target.target;
-//   if (target === '_system') {
-//     e.preventDefault();
-//     window.open(e.target.href, target);
-//   }
-// }, false);
-
-if (window.cordova === undefined) {
-  init();
-}
+if (!/(Android)/.test(window.navigator.userAgent)) { init(); }

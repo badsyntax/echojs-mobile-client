@@ -4,6 +4,7 @@ import _ from 'lodash';
 import React from 'react';
 import AppActions from '../../actions/AppActions';
 import NewsStore from '../../stores/NewsStore';
+import { DEBUG_PERF } from '../../constants/AppConstants';
 import { NewsList, ActivityIndicator, InfoMessage } from '../';
 import AppDispatcher from '../../dispatcher/AppDispatcher';
 
@@ -60,15 +61,11 @@ class NewsPage extends React.Component {
   }
 
   onChange() {
-    Perf.start();
-    var s = Date.now();
+    if (DEBUG_PERF) { console.time('NewsPage'); }
     this.setState(getState({
       isLoading: false
     }));
-    Perf.stop();
-    Perf.printInclusive();
-    // Perf.printWasted();
-    console.log(Date.now() - s);
+    if (DEBUG_PERF) { console.timeEnd('NewsPage'); }
   }
 
   getMessageType() {
@@ -114,7 +111,6 @@ class NewsPage extends React.Component {
   }
 
   render() {
-    console.log('test');
     var newsList = (
       <div className={'mui-app-content-canvas'}>
         {this.getActivityIndicator()}
