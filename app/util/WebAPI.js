@@ -7,8 +7,14 @@ import AppActions from '../actions/AppActions';
 import MockData from './MockData';
 
 import {
-  API_ENDPOINT
+  DEBUG_MOCK_DATA,
+  API_ENDPOINT,
+  NEWS_CACHE_AGE
 } from '../constants/AppConstants';
+
+if (DEBUG_MOCK_DATA) {
+  console.info('Using mock data')
+}
 
 let cache = {};
 
@@ -49,8 +55,8 @@ class API {
       count: 30
     }, opts)));
 
-    let promise = DEBUG ? MockData.getData('news') : cacheFetchJson(url, {
-      age: 60 * 1000 // 60 seconds
+    let promise = DEBUG_MOCK_DATA ? MockData.getData('news') : cacheFetchJson(url, {
+      age: NEWS_CACHE_AGE
     });
 
     return promise.then((json) => {
@@ -65,7 +71,7 @@ class API {
       postId: postId
     }));
 
-    let promise = DEBUG ? MockData.getData('post') : fetchJson(url);
+    let promise = DEBUG_MOCK_DATA ? MockData.getData('post') : fetchJson(url);
 
     return promise.then((comments) => {
       return {
