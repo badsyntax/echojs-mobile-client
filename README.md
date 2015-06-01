@@ -16,8 +16,11 @@ This client requires a proxy API to the EchoJS api. Install and run the server b
 * `npm run build:release` - Build the project for release
 * `npm run emulate` - Open the mobile emulator in dev mode
 * `npm run emulate:release` - Open the mobile emulate in release mode
+* `npm run deploy` - Runs a release build and deploys to an Android device
 
 ## Installing apk on device
+
+__Note: these steps can be run with `npm run deploy`__
 
 Android requires that all apps be digitally signed with a certificate before they can be installed.
 
