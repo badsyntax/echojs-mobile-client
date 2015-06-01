@@ -16,6 +16,10 @@ class NewsListItem extends React.Component {
     return classnames('listing-item');
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.item.id !== this.props.item.id;
+  }
+
   render() {
     let item = this.props.item;
     let time = new Date(item.ctime * 1000);

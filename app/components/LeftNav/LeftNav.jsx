@@ -36,9 +36,6 @@ class LeftNav extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {
-      selectedIndex: null
-    };
   }
 
   render() {

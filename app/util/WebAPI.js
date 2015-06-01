@@ -4,6 +4,8 @@ import 'whatwg-fetch';
 import _ from 'lodash';
 import AppActions from '../actions/AppActions';
 
+import MockData from './MockData';
+
 import {
   API_ENDPOINT
 } from '../constants/AppConstants';
@@ -47,10 +49,11 @@ class API {
       count: 30
     }, opts)));
 
-    return cacheFetchJson(url, {
+    let promise = DEBUG ? MockData.getData('news') : cacheFetchJson(url, {
       age: 60 * 1000 // 60 seconds
-    })
-    .then((json) => {
+    });
+
+    return promise.then((json) => {
       return json.news;
     });
   }
@@ -62,8 +65,9 @@ class API {
       postId: postId
     }));
 
-    return fetchJson(url)
-    .then((comments) => {
+    let promise = DEBUG ? MockData.getData('post') : fetchJson(url);
+
+    return promise.then((comments) => {
       return {
         post: null,
         comments: comments

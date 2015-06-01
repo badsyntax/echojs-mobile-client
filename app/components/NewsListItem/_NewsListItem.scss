@@ -1,12 +1,12 @@
 @import "toolkit";
 
 .listing-item {
-  padding: 12px 56px 12px 14px;
+  padding: 11px 60px 11px 14px;
   border-bottom: 1px solid $faint-black;
   position: relative;
   h2 {
     font-size: 18px;
-    line-height: 18px;
+    line-height: 20px;
     margin: 0 0 4px 0;
     padding: 0;
     @include breakpoint(phablet) {

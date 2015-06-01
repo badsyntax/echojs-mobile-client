@@ -2,6 +2,7 @@
 
 import pkg from '../../package';
 
+export const DEBUG = (process.env.NODE_ENV !== 'production');
 export const APP_TITLE = 'Echo JS';
 
 export const ACTION_POSTS_GET = 'ACTION_POSTS_GET';

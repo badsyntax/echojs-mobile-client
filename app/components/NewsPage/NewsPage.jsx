@@ -7,6 +7,10 @@ import NewsStore from '../../stores/NewsStore';
 import { NewsList, ActivityIndicator, InfoMessage } from '../';
 import AppDispatcher from '../../dispatcher/AppDispatcher';
 
+let { Perf } = React.addons;
+
+var s = false;
+
 import {
   ACTION_REFRESH_NEWS,
   ACTION_POSTS_GET_ERROR
@@ -20,7 +24,6 @@ function getState(state) {
 }
 
 class NewsPage extends React.Component {
-
 
   constructor(...args) {
     super(...args);
@@ -57,15 +60,35 @@ class NewsPage extends React.Component {
   }
 
   onChange() {
+    Perf.start();
+    var s = Date.now();
     this.setState(getState({
       isLoading: false
     }));
+    Perf.stop();
+    Perf.printInclusive();
+    // Perf.printWasted();
+    console.log(Date.now() - s);
+  }
+
+  getMessageType() {
+    if (this.state.hasError) {
+      return 'warning';
+    }
+    return null;
+  }
+
+  getMessage() {
+    if (this.state.hasError) {
+      return 'Unable to load news, please try again.';
+    }
+    return null;
   }
 
   getInfoMessage() {
-    if (this.state.hasError) {
-      let type = 'warning';
-      let message = 'Unable to load news, please try again.';
+    let type = this.getMessageType();
+    let message = this.getMessage();
+    if (type && message) {
       return (
         <InfoMessage
         message={message}
@@ -91,18 +114,20 @@ class NewsPage extends React.Component {
   }
 
   render() {
-    return (
+    console.log('test');
+    var newsList = (
       <div className={'mui-app-content-canvas'}>
         {this.getActivityIndicator()}
         {this.getInfoMessage()}
         {this.getNewsList()}
       </div>
     );
+    return newsList;
   }
 }
 
 NewsPage.willTransitionTo = () => {
-  NewsStore.reset();
+  // NewsStore.reset();
 };
 
 export default NewsPage;

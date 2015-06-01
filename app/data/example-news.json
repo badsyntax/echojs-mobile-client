@@ -1,306 +1,306 @@
 {
   "status": "ok",
-  "count": 13378,
+  "count": 13926,
   "news": [
     {
-      "username": "echojs",
-      "url": "http://blog.nodejs.org/2015/03/14/node-v0-10-37-stable/",
+      "username": "ponyfoo",
       "comments": "0",
-      "title": "Node v0.10.37 (Maintenance)",
-      "id": "13882",
+      "up": "3",
+      "id": "14503",
+      "title": "Designing Front-End Components",
       "down": "0",
-      "up": "1",
-      "ctime": "1426363556"
+      "ctime": "1430222862",
+      "url": "http://ponyfoo.com/articles/designing-front-end-components"
     },
     {
-      "username": "fgribreau",
-      "url": "http://blog.fgribreau.com/2015/03/braindump-versioning-http-api.html",
-      "title": "Versioning an HTTP API",
-      "id": "13881",
+      "username": "hekike",
       "comments": "0",
-      "up": "1",
+      "up": "4",
+      "id": "14502",
+      "title": "Automatic Cache Busting for Your CSS",
       "down": "0",
-      "ctime": "1426349891"
+      "ctime": "1430210643",
+      "url": "http://blog.risingstack.com/automatic-cache-busting-for-your-css/"
     },
     {
-      "username": "mizchi",
-      "url": "https://github.com/mizchi/arda",
-      "comments": "0",
-      "title": "Arda - Meta-Flux framework for real world",
-      "id": "13880",
-      "down": "0",
-      "up": "1",
-      "ctime": "1426347337"
-    },
-    {
-      "username": "mulderp",
-      "url": "http://thinkingonthinking.com/serial-communication-with-nodejs/",
-      "comments": "0",
-      "title": "Serial communication with NodeJS and Arduino",
-      "id": "13879",
-      "down": "0",
-      "up": "1",
-      "ctime": "1426342662"
-    },
-    {
-      "username": "elecash",
-      "url": "http://www.videogular.com/tutorials/videogular-cue-points-synchronize-video-with-twitter/",
-      "title": "Synchronizing Videogular with Twitter",
-      "id": "13878",
+      "username": "johnpro",
       "comments": "0",
       "up": "1",
-      "down": "0",
-      "ctime": "1426342638"
-    },
-    {
-      "username": "Kikobeats",
-      "url": "https://github.com/Kikobeats/acho#acho",
-      "title": "Acho - Simple but powerful logging system for NodeJS and browser",
-      "id": "13877",
-      "comments": "0",
-      "up": "1",
-      "down": "0",
-      "ctime": "1426333691"
-    },
-    {
-      "username": "dwltz",
-      "url": "http://blog.donnywals.com/dont-depend-on-javascript-to-render-your-page/",
-      "title": "Don't depend on JavaScript to render your page",
-      "id": "13876",
-      "comments": "0",
-      "up": "1",
+      "id": "14501",
+      "title": "Scope Inheritance in Angular JS",
       "down": "1",
-      "ctime": "1426330547"
+      "ctime": "1430192116",
+      "url": "http://www.pro-tekconsulting.com/blog/scope-inheritance-in-angular-js/"
     },
     {
-      "username": "echojs",
-      "url": "https://css-tricks.com/using-the-html5-history-api/",
+      "username": "Macropod",
       "comments": "0",
-      "title": "Using the HTML5 History API",
-      "id": "13875",
-      "down": "0",
       "up": "1",
-      "ctime": "1426319630"
+      "id": "14500",
+      "title": "Porting a web app to mobile using Cordova",
+      "down": "0",
+      "ctime": "1430177403",
+      "url": "https://macropod.com/blog/porting-a-web-application-to-mobile/"
+    },
+    {
+      "username": "ilyavf",
+      "comments": "0",
+      "up": "4",
+      "id": "14499",
+      "title": "Free Weekly Online JavaScript Training",
+      "down": "0",
+      "ctime": "1430168626",
+      "url": "http://blog.bitovi.com/free-weekly-online-javascript-training/"
     },
     {
       "username": "echojs",
-      "url": "https://github.com/sebpiq/WAAClock",
-      "title": "WAAClock - Small library to help you schedule things in time with Web Audio API",
-      "id": "13874",
+      "comments": "0",
+      "up": "1",
+      "id": "14498",
+      "title": "JavaScript Object Query Language Representation",
+      "down": "0",
+      "ctime": "1430159882",
+      "url": "https://github.com/anywhichway/joqular"
+    },
+    {
+      "username": "crcn",
+      "comments": "0",
+      "up": "1",
+      "id": "14497",
+      "title": "Atom package for helping you get out of coding blocks",
+      "down": "0",
+      "ctime": "1430155556",
+      "url": "https://github.com/cmpaul/oblique-strategies"
+    },
+    {
+      "username": "gsans",
+      "comments": "0",
+      "up": "1",
+      "id": "14496",
+      "title": "Lazy-loading CSS in your AngularJS App",
+      "down": "1",
+      "ctime": "1430155403",
+      "url": "https://medium.com/opinionated-angularjs/angular-dynamically-injecting-css-file-using-route-resolve-and-promises-7bfcb8ccd05b"
+    },
+    {
+      "username": "arunoda",
+      "comments": "1",
+      "up": "4",
+      "id": "14495",
+      "title": "Meteor for Windows: Getting Started Guide",
+      "down": "0",
+      "ctime": "1430149579",
+      "url": "https://meteorhacks.com/meteor-for-windows-getting-started-guide.html"
+    },
+    {
+      "username": "eskimoblood",
       "comments": "0",
       "up": "2",
+      "id": "14494",
+      "title": "David Nolen - The Front End Architecture Revolution",
       "down": "0",
-      "ctime": "1426319614"
+      "ctime": "1430142886",
+      "url": "http://www.ustream.tv/recorded/61483785"
+    },
+    {
+      "username": "rane",
+      "comments": "0",
+      "up": "1",
+      "id": "14493",
+      "title": "tunnit: simple command-line time tracking for coders written in LiveScript",
+      "down": "0",
+      "ctime": "1430138592",
+      "url": "https://github.com/raine/tunnit"
+    },
+    {
+      "username": "timruffles",
+      "comments": "0",
+      "up": "1",
+      "id": "14492",
+      "title": "Turn anything into an ng-model with ngModelController",
+      "down": "1",
+      "ctime": "1430137812",
+      "url": "http://truffles.me.uk/turn-anything-into-an-ng-model-with-ngmodelcontroller"
+    },
+    {
+      "username": "walter",
+      "comments": "0",
+      "up": "1",
+      "id": "14491",
+      "title": "Writing Minecraft Plugins in Javascript (the Book in Print)",
+      "down": "1",
+      "ctime": "1430137626",
+      "url": "http://walterhiggins.net/blog/Writing-Minecraft-Plugins-The-Book-in-Print"
+    },
+    {
+      "username": "typicode",
+      "comments": "0",
+      "up": "1",
+      "id": "14490",
+      "title": "Fetchival - JSON requests with fetch the easy way",
+      "down": "1",
+      "ctime": "1430123075",
+      "url": "https://github.com/typicode/fetchival"
     },
     {
       "username": "echojs",
-      "url": "https://blog.mozilla.org/futurereleases/2015/03/03/an-early-look-at-webgl-2/",
-      "title": "An Early Look at WebGL 2",
-      "id": "13873",
       "comments": "0",
       "up": "1",
-      "down": "0",
-      "ctime": "1426319504"
-    },
-    {
-      "username": "jaysoo",
-      "url": "http://jaysoo.ca/2015/03/13/avoiding-composability-issues-with-angular-1-directives/",
-      "title": "Avoiding composability issues with Angular 1 directives",
-      "id": "13872",
-      "comments": "0",
-      "up": "1",
-      "down": "0",
-      "ctime": "1426304955"
-    },
-    {
-      "username": "qbert",
-      "url": "http://www.robbestad.com/2015/03/logging-in-with-pure-javascript-app.html",
-      "title": "Logging In With A Pure JavaScript App",
-      "id": "13871",
-      "comments": "0",
-      "up": "1",
+      "id": "14489",
+      "title": "Everyone has JavaScript, right?",
       "down": "1",
-      "ctime": "1426277852"
+      "ctime": "1430112482",
+      "url": "http://kryogenix.org/code/browser/everyonehasjs.html"
     },
     {
-      "username": "gayanhewa",
-      "url": "https://github.com/gayanhewa/sailsjs-cacheman",
-      "comments": "0",
-      "title": "Caching with Cacheman for SailsJS",
-      "id": "13870",
-      "down": "0",
-      "up": "1",
-      "ctime": "1426269591"
-    },
-    {
-      "username": "tomekmarchi",
-      "url": "http://acidjs.com/site/demos/react/todo/",
-      "comments": "0",
-      "title": "Object.observe React like views in ACID",
-      "id": "13869",
-      "down": "0",
-      "up": "5",
-      "ctime": "1426264055"
-    },
-    {
-      "username": "gchudnov",
-      "url": "https://github.com/gchudnov/bspec",
-      "comments": "0",
-      "title": "A JavaScript library for structuring business rules",
-      "id": "13868",
-      "down": "0",
-      "up": "1",
-      "ctime": "1426259382"
-    },
-    {
-      "username": "MobiDev",
-      "url": "https://github.com/Rapid-Application-Development-JS/PubSub",
-      "title": "PubSub - Send messages and manage delivery",
-      "id": "13867",
+      "username": "echojs",
       "comments": "0",
       "up": "1",
+      "id": "14488",
+      "title": "NoSleep.js - Prevent display sleep and enable wake lock in all Android and iOS web browsers",
       "down": "0",
-      "ctime": "1426258485"
+      "ctime": "1430112476",
+      "url": "https://github.com/richtr/NoSleep.js"
+    },
+    {
+      "username": "echojs",
+      "comments": "0",
+      "up": "1",
+      "id": "14487",
+      "title": "Announcing Globalize 1.0",
+      "down": "0",
+      "ctime": "1430111469",
+      "url": "http://blog.jquery.com/2015/04/23/announcing-globalize-1-0/"
+    },
+    {
+      "username": "echojs",
+      "comments": "0",
+      "up": "2",
+      "id": "14486",
+      "title": "React Native v0.4",
+      "down": "0",
+      "ctime": "1430111437",
+      "url": "http://facebook.github.io/react/blog/2015/04/17/react-native-v0.4.html"
+    },
+    {
+      "username": "echojs",
+      "comments": "0",
+      "up": "10",
+      "id": "14485",
+      "title": "Eliminate JavaScript Code Smells (Slides)",
+      "down": "0",
+      "ctime": "1430111420",
+      "url": "http://elijahmanor.github.io/talks/js-smells/"
+    },
+    {
+      "username": "mishk0",
+      "comments": "0",
+      "up": "7",
+      "id": "14484",
+      "title": "Swiped.js - Swipe list for your web application",
+      "down": "0",
+      "ctime": "1430085636",
+      "url": "https://github.com/mishk0/swiped"
+    },
+    {
+      "username": "jayrye",
+      "comments": "0",
+      "up": "1",
+      "id": "14483",
+      "title": "FOAM Framework",
+      "down": "1",
+      "ctime": "1430076406",
+      "url": "http://foam-framework.github.io/foam/"
+    },
+    {
+      "username": "topheman",
+      "comments": "0",
+      "up": "3",
+      "id": "14482",
+      "title": "Feedbacks on my Isomorphic app, using React and ES6",
+      "down": "0",
+      "ctime": "1430061650",
+      "url": "http://dev.topheman.com/react-es6-isomorphic/"
+    },
+    {
+      "username": "rajkanakiya",
+      "comments": "0",
+      "up": "1",
+      "id": "14481",
+      "title": "Automatically inject Bower components in your source code using grunt-wiredep",
+      "down": "0",
+      "ctime": "1430043779",
+      "url": "http://grunt-tasks.com/grunt-wiredep/"
     },
     {
       "username": "nraboy",
-      "url": "https://www.airpair.com/ionic-framework/posts/ionic-firebase-password-manager",
-      "title": "Create a Password Management App Using Ionic Framework and Firebase",
-      "id": "13866",
       "comments": "0",
       "up": "1",
-      "down": "0",
-      "ctime": "1426256832"
+      "id": "14480",
+      "title": "Prerender Your AngularJS Apps To Boost SEO",
+      "down": "2",
+      "ctime": "1430014658",
+      "url": "https://blog.nraboy.com/2014/11/prerender-angularjs-apps-boost-seo/"
     },
     {
-      "username": "jhartikainen",
-      "url": "http://www.sitepoint.com/comparison-javascript-linting-tools/",
+      "username": "echojs",
       "comments": "0",
-      "title": "A Comparison of JavaScript Linting Tools",
-      "id": "13865",
-      "down": "0",
-      "up": "4",
-      "ctime": "1426248931"
-    },
-    {
-      "username": "davidchase",
-      "url": "http://derickbailey.com/2015/03/12/serially-iterating-an-array-asynchronously/",
-      "title": "Serially Iterating An Array, Asynchronously",
-      "id": "13863",
-      "comments": "0",
-      "up": "4",
-      "down": "0",
-      "ctime": "1426196202"
-    },
-    {
-      "username": "eskimoblood",
-      "url": "http://www.crashlytics.com/blog/building-user-interfaces-with-react/",
-      "title": "Why We Are Converting to React",
-      "id": "13862",
-      "comments": "0",
-      "up": "7",
-      "down": "1",
-      "ctime": "1426192537"
-    },
-    {
-      "username": "eskimoblood",
-      "url": "http://raganwald.com/2015/03/12/symmetry.html",
-      "comments": "1",
-      "title": "The Symmetry of JavaScript Functions",
-      "id": "13861",
-      "down": "1",
-      "up": "12",
-      "ctime": "1426192067"
-    },
-    {
-      "username": "eskimoblood",
-      "url": "http://lisperator.net/pltut/",
-      "comments": "0",
-      "title": "How to implement a programming language in JavaScript",
-      "id": "13860",
-      "down": "0",
-      "up": "4",
-      "ctime": "1426181310"
-    },
-    {
-      "username": "dwltz",
-      "url": "http://blog.donnywals.com/automagically-load-your-gulp-plugins/",
-      "comments": "0",
-      "title": "Automagically load your gulp plugins",
-      "id": "13859",
-      "down": "0",
-      "up": "1",
-      "ctime": "1426177217"
-    },
-    {
-      "username": "eskimoblood",
-      "url": "https://medium.com/@markfayngersh/harry-potter-and-the-magical-framework-4cb60b89e7fe",
-      "title": "Harry Potter and the Magical Framework",
-      "id": "13858",
-      "comments": "1",
       "up": "2",
+      "id": "14479",
+      "title": "Shared memory with Node.js",
       "down": "0",
-      "ctime": "1426171293"
+      "ctime": "1430000637",
+      "url": "http://blog.varunajayasiri.com/shared-memory-with-nodejs"
     },
     {
       "username": "echojs",
-      "url": "https://tessel.io/blog/112888410737/moving-faster-with-io-js",
       "comments": "0",
-      "title": "Moving Faster with io.js",
-      "id": "13857",
-      "down": "0",
-      "up": "3",
-      "ctime": "1426168758"
-    },
-    {
-      "username": "eskimoblood",
-      "url": "http://www.2ality.com/2015/03/destructuring-algorithm.html",
-      "comments": "0",
-      "title": "The destructuring algorithm in ECMAScript 6",
-      "id": "13856",
-      "down": "0",
-      "up": "3",
-      "ctime": "1426167414"
-    },
-    {
-      "username": "davidchase",
-      "url": "https://www.pandastrike.com/posts/20150311-react-bad-idea",
-      "comments": "8",
-      "title": "React Is A Terrible Idea",
-      "id": "13855",
-      "down": "10",
-      "up": "11",
-      "ctime": "1426165700"
-    },
-    {
-      "username": "gergelyke90",
-      "url": "http://blog.risingstack.com/jsconf-budapest/",
-      "comments": "0",
-      "title": "Organizing JSConf Budapest",
-      "id": "13854",
-      "down": "0",
-      "up": "7",
-      "ctime": "1426157922"
-    },
-    {
-      "username": "parroit",
-      "url": "https://github.com/shes/comws",
-      "comments": "0",
-      "title": "Comws - Koa like middlewares using generators via co",
-      "id": "13853",
-      "down": "0",
       "up": "1",
-      "ctime": "1426100570"
+      "id": "14478",
+      "title": "Creating a REST API using the MEAN Stack - Part 1",
+      "down": "0",
+      "ctime": "1430000626",
+      "url": "https://www.mongodb.com/blog/post/building-your-first-application-mongodb-creating-rest-api-using-mean-stack-part-1"
     },
     {
       "username": "echojs",
-      "url": "https://medium.com/@KamilLelonek/angularjs-and-scope-apply-best-practices-d07353175024",
-      "title": "AngularJS and $scope.$apply() best practices",
-      "id": "13852",
       "comments": "0",
       "up": "1",
+      "id": "14477",
+      "title": "Clif - Cross-platform CLI GIF maker based on JS+Web",
       "down": "0",
-      "ctime": "1426099556"
+      "ctime": "1430000600",
+      "url": "https://github.com/rauchg/clif"
+    },
+    {
+      "username": "echojs",
+      "comments": "0",
+      "up": "1",
+      "id": "14476",
+      "title": "Node Needs an Abstraction Layer for JavaScript Engines",
+      "down": "0",
+      "ctime": "1430000577",
+      "url": "http://jxcore.com/node-needs-an-abstraction-layer-for-javascript-engines/"
+    },
+    {
+      "username": "echojs",
+      "comments": "0",
+      "up": "1",
+      "id": "14475",
+      "title": "Building better Node.JS apps with RethinkDB",
+      "down": "0",
+      "ctime": "1430000522",
+      "url": "https://nodecraft.com/blog/dev/building-better-node-js-apps-with-rethinkdb"
+    },
+    {
+      "username": "echojs",
+      "comments": "0",
+      "up": "1",
+      "id": "14474",
+      "title": "Node.js Server-Side JavaScript Injection Detection & Exploitation",
+      "down": "0",
+      "ctime": "1430000491",
+      "url": "https://medium.com/@indepthtechio/node-js-server-side-javascript-injection-detection-exploitation-5ec2491f9535"
     }
   ]
 }
